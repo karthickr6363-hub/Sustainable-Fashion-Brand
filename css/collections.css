@@ -1,0 +1,595 @@
+/* Collections Page Specific Styles */
+
+/* Collections Hero */
+.collections-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.collections-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/collections-hero.jpg') center/cover;
+}
+
+.collections-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 42, 29, 0.9) 0%, rgba(15, 42, 29, 0.7) 100%);
+}
+
+.collections-hero .hero-content {
+    text-align: center;
+    z-index: 1;
+    padding: 0 2rem;
+}
+
+.collections-hero h1 {
+    color: var(--text-primary);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.collections-hero p {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Seasonal Drops */
+.seasonal-drops {
+    padding: 6rem 0;
+    background-color: rgba(244, 241, 236, 0.05);
+}
+
+.season-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.season-tab {
+    background-color: rgba(244, 241, 236, 0.1);
+    border: 1px solid rgba(201, 162, 77, 0.3);
+    color: var(--text-primary);
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+}
+
+.season-tab:hover {
+    background-color: rgba(201, 162, 77, 0.2);
+    border-color: var(--accent-color);
+}
+
+.season-tab.active {
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    border-color: var(--accent-color);
+}
+
+.season-content {
+    display: none;
+}
+
+.season-content.active {
+    display: block;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.season-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.season-hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.season-info {
+    padding: 3rem;
+}
+
+.season-info h3 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.season-info p {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.season-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.season-stats span {
+    background-color: rgba(201, 162, 77, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    border: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.season-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 400px;
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
+}
+
+.season-item:hover {
+    transform: translateY(-5px);
+}
+
+.season-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+}
+
+.season-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(15, 42, 29, 0.9) 0%, transparent 100%);
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.season-item:hover .item-overlay {
+    transform: translateY(0);
+}
+
+.item-overlay h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.item-overlay p {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.item-overlay .price {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Limited Editions */
+.limited-editions {
+    padding: 6rem 0;
+}
+
+.limited-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.limited-card {
+    background-color: rgba(244, 241, 236, 0.05);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.limited-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(201, 162, 77, 0.2);
+}
+
+.limited-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.limited-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.limited-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.limited-card.featured .limited-image {
+    height: auto;
+}
+
+.limited-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+}
+
+.limited-card:hover .limited-image img {
+    transform: scale(1.05);
+}
+
+.countdown-timer {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: rgba(15, 42, 29, 0.9);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+}
+
+.timer-label {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.timer .separator {
+    color: var(--text-primary);
+    opacity: 0.6;
+}
+
+.limited-info {
+    padding: 2rem;
+}
+
+.limited-info h3 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.artisan-name {
+    color: var(--text-primary);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.limited-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.limited-features span {
+    background-color: rgba(201, 162, 77, 0.1);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    border: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+.limited-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.limited-price .price {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.original-price {
+    color: var(--text-primary);
+    text-decoration: line-through;
+    opacity: 0.6;
+    font-size: 1.1rem;
+}
+
+/* Capsule Wardrobe */
+.capsule-wardrobe {
+    padding: 6rem 0;
+    background-color: rgba(244, 241, 236, 0.05);
+}
+
+.capsule-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.capsule-content h3 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.capsule-content p {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.capsule-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    min-width: 60px;
+}
+
+.benefit-item h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.benefit-item p {
+    color: var(--text-primary);
+    opacity: 0.8;
+    margin: 0;
+}
+
+.capsule-visual {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.capsule-visual img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.capsule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.capsule-item {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-out;
+}
+
+.capsule-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-number {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.capsule-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.item-info {
+    padding: 1.5rem;
+}
+
+.item-info h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.item-info p {
+    color: var(--text-primary);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.item-info .price {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.capsule-cta {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(201, 162, 77, 0.1) 0%, rgba(201, 162, 77, 0.2) 100%);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--accent-color);
+}
+
+.capsule-cta h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.capsule-cta p {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .season-hero {
+        grid-template-columns: 1fr;
+    }
+    
+    .season-hero img {
+        height: 300px;
+    }
+    
+    .limited-card.featured {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+    }
+    
+    .capsule-intro {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .collections-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .collections-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .season-tabs {
+        gap: 0.5rem;
+    }
+    
+    .season-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .season-stats {
+        gap: 1rem;
+    }
+    
+    .season-grid,
+    .limited-grid,
+    .capsule-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .capsule-benefits {
+        gap: 1rem;
+    }
+    
+    .timer {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .collections-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .season-info {
+        padding: 2rem 1.5rem;
+    }
+    
+    .limited-info {
+        padding: 1.5rem;
+    }
+    
+    .item-info {
+        padding: 1rem;
+    }
+    
+    .capsule-cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .season-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

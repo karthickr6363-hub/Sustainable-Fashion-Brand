@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - EcoLux Fashion</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/brand-logo.css">
+    <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>EcoLux</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Home
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Luxury Store</a>
+                        <a href="home2.html" class="dropdown-item">Home 2 - Brand Story</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown pages-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Pages
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="shop.html" class="dropdown-item">Shop</a>
+                        <a href="collections.html" class="dropdown-item">Collections</a>
+                        <a href="sustainability.html" class="dropdown-item">Sustainability</a>
+                        <a href="impact.html" class="dropdown-item">Impact Tracker</a>
+                        <a href="journal.html" class="dropdown-item">Journal</a>
+                        <a href="about.html" class="dropdown-item">About</a>
+                        <a href="login.html" class="dropdown-item">Account</a>
+                        <a href="dashboard.html" class="dropdown-item">Brand Dashboard</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <div class="container">
+            <h1>Shop Sustainable Fashion</h1>
+            <p>Discover our collection of ethically crafted, environmentally conscious pieces</p>
+        </div>
+    </section>
+
+    <!-- Shop Main Content -->
+    <main class="shop-main">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="shop-filters">
+                    <div class="filter-section">
+                        <h3>Materials</h3>
+                        <div class="filter-options">
+                            <label class="filter-label">
+                                <input type="checkbox" name="material" value="organic-cotton">
+                                <span>Organic Cotton</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="material" value="linen">
+                                <span>Linen</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="material" value="hemp">
+                                <span>Hemp</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="material" value="recycled-silk">
+                                <span>Recycled Silk</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="material" value="bamboo">
+                                <span>Bamboo</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Size</h3>
+                        <div class="filter-options">
+                            <label class="filter-label">
+                                <input type="checkbox" name="size" value="xs">
+                                <span>XS</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="size" value="s">
+                                <span>S</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="size" value="m">
+                                <span>M</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="size" value="l">
+                                <span>L</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="size" value="xl">
+                                <span>XL</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <input type="range" min="0" max="500" value="250" class="price-slider">
+                            <div class="price-display">
+                                <span>$0</span>
+                                <span id="price-value">$250</span>
+                                <span>$500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Impact Score</h3>
+                        <div class="impact-score-filter">
+                            <label class="filter-label">
+                                <input type="checkbox" name="impact" value="5">
+                                <span>⭐⭐⭐⭐⭐ Exceptional</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="impact" value="4">
+                                <span>⭐⭐⭐⭐ Excellent</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" name="impact" value="3">
+                                <span>⭐⭐⭐ Good</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-secondary filter-reset">Reset Filters</button>
+                </aside>
+
+                <!-- Product Grid -->
+                <section class="shop-content">
+                    <div class="shop-header">
+                        <div class="results-info">
+                            <span>Showing 24 of 156 products</span>
+                        </div>
+                        <div class="sort-options">
+                            <select class="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="impact">Impact Score</option>
+                                <option value="newest">Newest First</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="product-badges">
+                                <span class="badge eco-badge">Eco Choice</span>
+                                <span class="badge impact-badge">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="assets/shop-product-1.jpg" alt="Organic Cotton Maxi Dress">
+                                <div class="product-actions">
+                                    <button class="btn-quick-view">Quick View</button>
+                                    <button class="btn-quick-add">Quick Add</button>
+                                    <button class="btn-wishlist">♡</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Organic Cotton Maxi Dress</h3>
+                                <p class="product-material">100% Organic Cotton</p>
+                                <p class="product-price">$189</p>
+                                <div class="product-impact">
+                                    <span class="impact-score">⭐⭐⭐⭐⭐</span>
+                                    <span class="impact-text">Exceptional Impact</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <div class="product-badges">
+                                <span class="badge new-badge">New</span>
+                                <span class="badge impact-badge">⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="assets/shop-product-2.jpg" alt="Linen Summer Blazer">
+                                <div class="product-actions">
+                                    <button class="btn-quick-view">Quick View</button>
+                                    <button class="btn-quick-add">Quick Add</button>
+                                    <button class="btn-wishlist">♡</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Linen Summer Blazer</h3>
+                                <p class="product-material">European Flax Linen</p>
+                                <p class="product-price">$245</p>
+                                <div class="product-impact">
+                                    <span class="impact-score">⭐⭐⭐⭐</span>
+                                    <span class="impact-text">Excellent Impact</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <div class="product-badges">
+                                <span class="badge artisan-badge">Artisan Made</span>
+                                <span class="badge impact-badge">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="assets/shop-product-3.jpg" alt="Recycled Silk Scarf">
+                                <div class="product-actions">
+                                    <button class="btn-quick-view">Quick View</button>
+                                    <button class="btn-quick-add">Quick Add</button>
+                                    <button class="btn-wishlist">♡</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Recycled Silk Scarf</h3>
+                                <p class="product-material">100% Recycled Silk</p>
+                                <p class="product-price">$89</p>
+                                <div class="product-impact">
+                                    <span class="impact-score">⭐⭐⭐⭐⭐</span>
+                                    <span class="impact-text">Exceptional Impact</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <div class="product-badges">
+                                <span class="badge eco-badge">Water Wise</span>
+                                <span class="badge impact-badge">⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="assets/shop-product-4.jpg" alt="Hemp Wide Leg Trousers">
+                                <div class="product-actions">
+                                    <button class="btn-quick-view">Quick View</button>
+                                    <button class="btn-quick-add">Quick Add</button>
+                                    <button class="btn-wishlist">♡</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Hemp Wide Leg Trousers</h3>
+                                <p class="product-material">Sustainable Hemp Blend</p>
+                                <p class="product-price">$156</p>
+                                <div class="product-impact">
+                                    <span class="impact-score">⭐⭐⭐⭐</span>
+                                    <span class="impact-text">Excellent Impact</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="product-card">
+                            <div class="product-badges">
+                                <span class="badge bestseller-badge">Bestseller</span>
+                                <span class="badge impact-badge">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="assets/shop-product-5.jpg" alt="Bamboo Lounge Set">
+                                <div class="product-actions">
+                                    <button class="btn-quick-view">Quick View</button>
+                                    <button class="btn-quick-add">Quick Add</button>
+                                    <button class="btn-wishlist">♡</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Bamboo Lounge Set</h3>
+                                <p class="product-material">Organic Bamboo Fabric</p>
+                                <p class="product-price">$178</p>
+                                <div class="product-impact">
+                                    <span class="impact-score">⭐⭐⭐⭐⭐</span>
+                                    <span class="impact-text">Exceptional Impact</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="product-card">
+                            <div class="product-badges">
+                                <span class="badge limited-badge">Limited Edition</span>
+                                <span class="badge impact-badge">⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="assets/shop-product-6.jpg" alt="Handwoven Cotton Top">
+                                <div class="product-actions">
+                                    <button class="btn-quick-view">Quick View</button>
+                                    <button class="btn-quick-add">Quick Add</button>
+                                    <button class="btn-wishlist">♡</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Handwoven Cotton Top</h3>
+                                <p class="product-material">Handwoven Organic Cotton</p>
+                                <p class="product-price">$134</p>
+                                <div class="product-impact">
+                                    <span class="impact-score">⭐⭐⭐⭐</span>
+                                    <span class="impact-text">Excellent Impact</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn btn-secondary" disabled>Previous</button>
+                        <div class="page-numbers">
+                            <button class="page-number active">1</button>
+                            <button class="page-number">2</button>
+                            <button class="page-number">3</button>
+                            <span class="page-dots">...</span>
+                            <button class="page-number">13</button>
+                        </div>
+                        <button class="btn btn-secondary">Next</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="quick-view-content">
+                <div class="quick-view-image">
+                    <img id="modal-product-image" src="" alt="">
+                </div>
+                <div class="quick-view-info">
+                    <h2 id="modal-product-title">Product Title</h2>
+                    <p id="modal-product-material">Material</p>
+                    <p id="modal-product-price" class="price">$0</p>
+                    <div id="modal-product-impact" class="product-impact">
+                        <span class="impact-score">⭐⭐⭐⭐⭐</span>
+                        <span class="impact-text">Exceptional Impact</span>
+                    </div>
+                    <div class="size-selector">
+                        <h4>Select Size</h4>
+                        <div class="size-options">
+                            <button class="size-option">XS</button>
+                            <button class="size-option">S</button>
+                            <button class="size-option">M</button>
+                            <button class="size-option">L</button>
+                            <button class="size-option">XL</button>
+                        </div>
+                    </div>
+                    <div class="quantity-selector">
+                        <h4>Quantity</h4>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" value="1" min="1" max="10" class="quantity-input">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        <button class="btn btn-secondary add-to-wishlist">Add to Wishlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EcoLux Fashion</h3>
+                    <p>Sustainable luxury for conscious consumers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoLux Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

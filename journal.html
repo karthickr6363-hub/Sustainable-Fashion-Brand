@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - EcoLux Fashion</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/brand-logo.css">
+    <link rel="stylesheet" href="css/journal.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>EcoLux</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Home
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Luxury Store</a>
+                        <a href="home2.html" class="dropdown-item">Home 2 - Brand Story</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown pages-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Pages
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="shop.html" class="dropdown-item">Shop</a>
+                        <a href="collections.html" class="dropdown-item">Collections</a>
+                        <a href="sustainability.html" class="dropdown-item">Sustainability</a>
+                        <a href="impact.html" class="dropdown-item">Impact Tracker</a>
+                        <a href="journal.html" class="dropdown-item">Journal</a>
+                        <a href="about.html" class="dropdown-item">About</a>
+                        <a href="login.html" class="dropdown-item">Account</a>
+                        <a href="dashboard.html" class="dropdown-item">Brand Dashboard</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Journal Hero -->
+    <section class="journal-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Journal</h1>
+            <p>Stories, insights, and inspiration for conscious living and sustainable fashion</p>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-article">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="assets/featured-article.jpg" alt="Featured Article">
+                    <div class="article-badge">Featured Story</div>
+                </div>
+                <div class="featured-text">
+                    <div class="article-meta">
+                        <span class="category">Sustainability</span>
+                        <span class="date">March 15, 2024</span>
+                        <span class="read-time">8 min read</span>
+                    </div>
+                    <h2>The Future of Fashion: How Circular Economy is Revolutionizing the Industry</h2>
+                    <p>Discover how innovative brands are reimagining fashion's lifecycle from linear to circular, creating a world where clothes never become waste.</p>
+                    <div class="article-excerpt">
+                        <p>In a world where fast fashion has dominated for decades, a quiet revolution is taking place. The circular economy model is transforming how we think about clothing production, consumption, and disposal. This shift isn't just environmental—it's economic, social, and deeply personal...</p>
+                    </div>
+                    <div class="article-author">
+                        <img src="assets/author-1.jpg" alt="Author">
+                        <div>
+                            <span class="author-name">Sarah Chen</span>
+                            <span class="author-title">Sustainability Editor</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary read-featured">Read Full Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="category-filters">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-category="all">All Articles</button>
+                <button class="filter-tab" data-category="sustainability">Sustainability</button>
+                <button class="filter-tab" data-category="styling">Styling Guides</button>
+                <button class="filter-tab" data-category="industry">Industry News</button>
+                <button class="filter-tab" data-category="artisan">Artisan Stories</button>
+                <button class="filter-tab" data-category="lifestyle">Lifestyle</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Grid -->
+    <section class="article-grid">
+        <div class="container">
+            <div class="articles-container">
+                <!-- Article 1 -->
+                <article class="article-card" data-category="styling">
+                    <div class="article-image">
+                        <img src="assets/article-1.jpg" alt="Capsule Wardrobe Guide">
+                        <div class="article-overlay">
+                            <span class="read-time">5 min read</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">Styling Guides</span>
+                            <span class="date">March 12, 2024</span>
+                        </div>
+                        <h3>Building a Sustainable Capsule Wardrobe: 12 Pieces, 30+ Outfits</h3>
+                        <p>Learn how to create a versatile wardrobe with minimal pieces that maximizes style while minimizing environmental impact.</p>
+                        <div class="article-author">
+                            <img src="assets/author-2.jpg" alt="Author">
+                            <span class="author-name">Maria Rodriguez</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card" data-category="sustainability">
+                    <div class="article-image">
+                        <img src="assets/article-2.jpg" alt="Natural Dyes">
+                        <div class="article-overlay">
+                            <span class="read-time">6 min read</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">Sustainability</span>
+                            <span class="date">March 10, 2024</span>
+                        </div>
+                        <h3>The Art of Natural Dyes: Ancient Techniques for Modern Fashion</h3>
+                        <p>Explore how traditional dyeing methods using plants, minerals, and insects are creating the most sustainable colors in fashion.</p>
+                        <div class="article-author">
+                            <img src="assets/author-3.jpg" alt="Author">
+                            <span class="author-name">Amina Kone</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card" data-category="artisan">
+                    <div class="article-image">
+                        <img src="assets/article-3.jpg" alt="Artisan Profile">
+                        <div class="article-overlay">
+                            <span class="read-time">7 min read</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">Artisan Stories</span>
+                            <span class="date">March 8, 2024</span>
+                        </div>
+                        <h3>Meet the Weavers: Preserving Portuguese Textile Traditions</h3>
+                        <p>Journey through the hills of northern Portugal to meet the artisans keeping centuries-old weaving techniques alive in the modern era.</p>
+                        <div class="article-author">
+                            <img src="assets/author-1.jpg" alt="Author">
+                            <span class="author-name">Sarah Chen</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card" data-category="industry">
+                    <div class="article-image">
+                        <img src="assets/article-4.jpg" alt="Fashion Week">
+                        <div class="article-overlay">
+                            <span class="read-time">4 min read</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">Industry News</span>
+                            <span class="date">March 5, 2024</span>
+                        </div>
+                        <h3>Sustainable Fashion Week: How Runways Are Going Green</h3>
+                        <p>From carbon-neutral shows to upcycled collections, fashion weeks worldwide are embracing sustainability as the new luxury.</p>
+                        <div class="article-author">
+                            <img src="assets/author-4.jpg" alt="Author">
+                            <span class="author-name">James Mitchell</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card" data-category="lifestyle">
+                    <div class="article-image">
+                        <img src="assets/article-5.jpg" alt="Minimalist Living">
+                        <div class="article-overlay">
+                            <span class="read-time">5 min read</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">Lifestyle</span>
+                            <span class="date">March 3, 2024</span>
+                        </div>
+                        <h3>Minimalist Living: How Less Clothing Can Mean More Happiness</h3>
+                        <p>Discover the psychological benefits of a curated wardrobe and how mindful consumption can lead to a more fulfilling life.</p>
+                        <div class="article-author">
+                            <img src="assets/author-2.jpg" alt="Author">
+                            <span class="author-name">Maria Rodriguez</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-card" data-category="styling">
+                    <div class="article-image">
+                        <img src="assets/article-6.jpg" alt="Seasonal Transition">
+                        <div class="article-overlay">
+                            <span class="read-time">6 min read</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">Styling Guides</span>
+                            <span class="date">March 1, 2024</span>
+                        </div>
+                        <h3>Seasonal Transitions: Styling Sustainable Pieces Year-Round</h3>
+                        <p>Master the art of transitional dressing with versatile sustainable pieces that work seamlessly from winter to spring.</p>
+                        <div class="article-author">
+                            <img src="assets/author-5.jpg" alt="Author">
+                            <span class="author-name">Emma Thompson</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn btn-secondary load-more">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="journal-newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Inspired</h2>
+                <p>Get weekly insights on sustainable fashion, styling tips, and exclusive stories from our artisan partners.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="newsletter-note">Join 50,000+ conscious fashion enthusiasts. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Reading Modal -->
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="article-modal-content">
+                <article class="full-article">
+                    <header class="article-header">
+                        <div class="article-meta">
+                            <span class="category" id="modal-category">Sustainability</span>
+                            <span class="date" id="modal-date">March 15, 2024</span>
+                            <span class="read-time" id="modal-read-time">8 min read</span>
+                        </div>
+                        <h1 id="modal-title">Article Title</h1>
+                        <div class="article-author">
+                            <img id="modal-author-image" src="" alt="Author">
+                            <div>
+                                <span class="author-name" id="modal-author-name">Author Name</span>
+                                <span class="author-title" id="modal-author-title">Author Title</span>
+                            </div>
+                        </div>
+                    </header>
+                    
+                    <div class="article-body">
+                        <img id="modal-hero-image" src="" alt="Article Hero" class="article-hero-image">
+                        <div id="modal-content">
+                            <!-- Article content will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <footer class="article-footer">
+                        <div class="article-tags">
+                            <span class="tag">Sustainable Fashion</span>
+                            <span class="tag">Circular Economy</span>
+                            <span class="tag">Eco Luxury</span>
+                        </div>
+                        <div class="article-actions">
+                            <button class="btn btn-primary share-article">Share Article</button>
+                            <button class="btn btn-secondary bookmark-article">Bookmark</button>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EcoLux Fashion</h3>
+                    <p>Sustainable luxury for conscious consumers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoLux Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/journal.js"></script>
+</body>
+</html>

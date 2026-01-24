@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey - EcoLux Fashion</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/brand-logo.css">
+    <link rel="stylesheet" href="css/story-mode.css">
+</head>
+<body class="story-mode">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>EcoLux</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Home
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Luxury Store</a>
+                        <a href="home2.html" class="dropdown-item">Home 2 - Brand Story</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown pages-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Pages
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="shop.html" class="dropdown-item">Shop</a>
+                        <a href="collections.html" class="dropdown-item">Collections</a>
+                        <a href="sustainability.html" class="dropdown-item">Sustainability</a>
+                        <a href="impact.html" class="dropdown-item">Impact Tracker</a>
+                        <a href="journal.html" class="dropdown-item">Journal</a>
+                        <a href="about.html" class="dropdown-item">About</a>
+                        <a href="login.html" class="dropdown-item">Account</a>
+                        <a href="dashboard.html" class="dropdown-item">Brand Dashboard</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero - Our Journey -->
+    <section class="story-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Our Journey</h1>
+            <p class="hero-tagline">From a small idea to a global movement for sustainable fashion</p>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Brand Milestones</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <h3>The Beginning</h3>
+                        <p>EcoLux was born in a small studio with a big dream: to create beautiful fashion that doesn't cost the earth.</p>
+                        <div class="timeline-image">
+                            <img src="assets/timeline-2018.jpg" alt="The Beginning">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h3>First Organic Collection</h3>
+                        <p>Launched our first 100% organic cotton collection, partnering with certified fair-trade farms in India.</p>
+                        <div class="timeline-image">
+                            <img src="assets/timeline-2019.jpg" alt="First Collection">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3>Carbon Neutral Status</h3>
+                        <p>Achieved carbon neutral certification and launched our innovative recycling program.</p>
+                        <div class="timeline-image">
+                            <img src="assets/timeline-2020.jpg" alt="Carbon Neutral">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3>Global Expansion</h3>
+                        <p>Expanded to 15 countries, bringing sustainable fashion to conscious consumers worldwide.</p>
+                        <div class="timeline-image">
+                            <img src="assets/timeline-2021.jpg" alt="Global Expansion">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <h3>Impact Leader</h3>
+                        <p>Recognized as the most impactful sustainable fashion brand, saving over 10 million liters of water.</p>
+                        <div class="timeline-image">
+                            <img src="assets/timeline-2024.jpg" alt="Impact Leader">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artisan Stories -->
+    <section class="artisan-stories">
+        <div class="container">
+            <h2 class="section-title">Meet Our Artisans</h2>
+            <div class="artisan-grid">
+                <div class="artisan-profile">
+                    <div class="artisan-image">
+                        <img src="assets/artisan-1.jpg" alt="Maria Silva">
+                    </div>
+                    <div class="artisan-info">
+                        <h3>Maria Silva</h3>
+                        <p class="artisan-role">Master Weaver</p>
+                        <p class="artisan-location">Portugal</p>
+                        <p class="artisan-story">"For 30 years, I've woven stories into fabric. With EcoLux, my traditional techniques now reach the world while preserving our heritage."</p>
+                        <div class="artisan-stats">
+                            <span>15 years with EcoLux</span>
+                            <span>500+ pieces created</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artisan-profile">
+                    <div class="artisan-image">
+                        <img src="assets/artisan-2.jpg" alt="Raj Patel">
+                    </div>
+                    <div class="artisan-info">
+                        <h3>Raj Patel</h3>
+                        <p class="artisan-role">Organic Cotton Farmer</p>
+                        <p class="artisan-location">India</p>
+                        <p class="artisan-story">"Growing cotton without chemicals changed my life. EcoLux's fair prices helped me send my children to school and invest in my community."</p>
+                        <div class="artisan-stats">
+                            <span>8 years partnership</span>
+                            <span>50 tons of organic cotton</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artisan-profile">
+                    <div class="artisan-image">
+                        <img src="assets/artisan-3.jpg" alt="Amina Kone">
+                    </div>
+                    <div class="artisan-info">
+                        <h3>Amina Kone</h3>
+                        <p class="artisan-role">Natural Dyer</p>
+                        <p class="artisan-location">Mali</p>
+                        <p class="artisan-story">"Using plants and minerals to create colors connects me to my ancestors. EcoLux honors these traditions in modern fashion."</p>
+                        <div class="artisan-stats">
+                            <span>12 years collaboration</span>
+                            <span>200+ unique colors</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Gallery -->
+    <section class="workshop-gallery">
+        <div class="container">
+            <h2 class="section-title">Our Workshops</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/workshop-1.jpg" alt="Weaving Workshop">
+                    <div class="gallery-overlay">
+                        <h3>Traditional Weaving</h3>
+                        <p>Portugal Textile Workshop</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/workshop-2.jpg" alt="Organic Farm">
+                    <div class="gallery-overlay">
+                        <h3>Organic Cotton Farm</h3>
+                        <p>Maharashtra, India</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/workshop-3.jpg" alt="Natural Dyeing">
+                    <div class="gallery-overlay">
+                        <h3>Natural Dye Studio</h3>
+                        <p>Bamako, Mali</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/workshop-4.jpg" alt="Design Studio">
+                    <div class="gallery-overlay">
+                        <h3>Design Studio</h3>
+                        <p>Portland, Oregon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency Dashboard Preview -->
+    <section class="transparency-preview">
+        <div class="container">
+            <h2 class="section-title">Our Impact in Numbers</h2>
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-icon">💧</div>
+                    <div class="metric-number impact-counter" data-target="10000000">0</div>
+                    <div class="metric-label">Liters of Water Saved</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🌍</div>
+                    <div class="metric-number impact-counter" data-target="50000">0</div>
+                    <div class="metric-label">Tons CO₂ Reduced</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🤝</div>
+                    <div class="metric-number impact-counter" data-target="500">0</div>
+                    <div class="metric-label">Artisans Empowered</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🌱</div>
+                    <div class="metric-number impact-counter" data-target="1000000">0</div>
+                    <div class="metric-label">Organic Garments</div>
+                </div>
+            </div>
+            <div class="cta-section">
+                <h3>Transparency in Action</h3>
+                <p>Every purchase supports our mission and creates real impact. Explore our full dashboard to see how your choices make a difference.</p>
+                <a href="impact.html" class="btn btn-primary">View Full Impact Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EcoLux Fashion</h3>
+                    <p>Sustainable luxury for conscious consumers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoLux Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

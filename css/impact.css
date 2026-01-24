@@ -1,0 +1,617 @@
+/* Impact Page Specific Styles */
+
+/* Impact Hero */
+.impact-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.impact-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/impact-hero.jpg') center/cover;
+}
+
+.impact-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 42, 29, 0.9) 0%, rgba(15, 42, 29, 0.7) 100%);
+}
+
+.impact-hero .hero-content {
+    text-align: center;
+    z-index: 1;
+    padding: 0 2rem;
+}
+
+.impact-hero h1 {
+    color: var(--text-primary);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.impact-hero p {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Live Metrics */
+.live-metrics {
+    padding: 6rem 0;
+    background-color: rgba(244, 241, 236, 0.05);
+}
+
+.metrics-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.metrics-intro p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.metric-card {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(201, 162, 77, 0.2);
+}
+
+.metric-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.metric-number {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
+    line-height: 1;
+}
+
+.metric-label {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.metric-change {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: rgba(201, 162, 77, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+/* Live Metric Animation */
+.live-metric::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--accent-color), transparent, var(--accent-color));
+    border-radius: var(--radius-lg);
+    opacity: 0;
+    z-index: -1;
+    animation: liveMetricGlow 3s ease-in-out infinite;
+}
+
+@keyframes liveMetricGlow {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.02);
+    }
+}
+
+/* Annual Report */
+.annual-report {
+    padding: 6rem 0;
+}
+
+.report-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.report-intro p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.report-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.report-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.highlight-card {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+}
+
+.highlight-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.highlight-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.highlight-card li {
+    color: var(--text-primary);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(201, 162, 77, 0.1);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.highlight-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.highlight-card li:last-child {
+    border-bottom: none;
+}
+
+/* Impact Chart */
+.impact-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.chart-item {
+    display: grid;
+    grid-template-columns: 150px 1fr 100px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chart-label {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.chart-bar {
+    height: 8px;
+    background-color: rgba(244, 241, 236, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.chart-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #b89143);
+    border-radius: 4px;
+    transition: width 1s ease-out;
+    position: relative;
+}
+
+.chart-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.chart-value {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Report Downloads */
+.report-downloads h3 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.download-card {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+    transition: transform 0.3s ease-out;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+}
+
+.download-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.download-card h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.download-card p {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Partner NGOs */
+.partner-ngos {
+    padding: 6rem 0;
+    background-color: rgba(244, 241, 236, 0.05);
+}
+
+.ngos-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.ngos-intro p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.ngos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.ngo-card {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+    transition: transform 0.3s ease-out;
+}
+
+.ngo-card:hover {
+    transform: translateY(-5px);
+}
+
+.ngo-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background-color: rgba(201, 162, 77, 0.1);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ngo-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.ngo-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.ngo-card p {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.ngo-impact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.ngo-impact span {
+    background-color: rgba(201, 162, 77, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    border: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+/* Personal Impact */
+.personal-impact {
+    padding: 6rem 0;
+}
+
+.personal-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.personal-intro p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.impact-calculator-tool {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(244, 241, 236, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+}
+
+.calculator-inputs {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.calculator-inputs label {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.calculator-inputs input {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(244, 241, 236, 0.1);
+    border: 1px solid rgba(201, 162, 77, 0.3);
+    color: var(--text-primary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.calculator-inputs input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.personal-results {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.personal-results h3 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.personal-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.personal-metric {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+}
+
+.personal-metric .metric-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.personal-metric .metric-value {
+    color: var(--accent-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
+}
+
+.personal-metric .metric-label {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.impact-message {
+    background: linear-gradient(135deg, rgba(201, 162, 77, 0.1) 0%, rgba(201, 162, 77, 0.2) 100%);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border: 2px solid var(--accent-color);
+}
+
+.impact-message h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.impact-message p {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.impact-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .report-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .chart-item {
+        grid-template-columns: 120px 1fr 80px;
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .impact-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .impact-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .metrics-grid,
+    .download-grid,
+    .ngos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .metric-card,
+    .download-card,
+    .ngo-card {
+        padding: 1.5rem;
+    }
+    
+    .chart-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .chart-label {
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .chart-value {
+        text-align: center;
+    }
+    
+    .personal-metrics {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .impact-actions {
+        flex-direction: column;
+    }
+    
+    .impact-calculator-tool {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .impact-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .metric-number {
+        font-size: 2rem;
+    }
+    
+    .metric-icon {
+        font-size: 2.5rem;
+    }
+    
+    .highlight-card,
+    .download-card,
+    .ngo-card {
+        padding: 1rem;
+    }
+    
+    .personal-metric {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,74 @@
+/* Brand Logo Styles */
+.nav-brand h1 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-brand h1::before {
+    content: '🌿';
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    animation: leafGentle 3s ease-in-out infinite;
+}
+
+@keyframes leafGentle {
+    0%, 100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-50%) rotate(5deg);
+    }
+}
+
+/* Logo hover effect */
+.nav-brand:hover h1 {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
+}
+
+/* Footer logo enhancement */
+.footer-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 30px;
+}
+
+.footer-section h3::before {
+    content: '🌿';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+/* Responsive logo adjustments */
+@media (max-width: 768px) {
+    .nav-brand h1 {
+        font-size: 1.5rem;
+    }
+    
+    .nav-brand h1::before {
+        left: -28px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand h1 {
+        font-size: 1.3rem;
+    }
+    
+    .nav-brand h1::before {
+        left: -25px;
+        font-size: 1rem;
+    }
+}

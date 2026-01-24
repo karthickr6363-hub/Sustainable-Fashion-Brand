@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - EcoLux Fashion</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/brand-logo.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>EcoLux</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Home
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Luxury Store</a>
+                        <a href="home2.html" class="dropdown-item">Home 2 - Brand Story</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown pages-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Pages
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="shop.html" class="dropdown-item">Shop</a>
+                        <a href="collections.html" class="dropdown-item">Collections</a>
+                        <a href="sustainability.html" class="dropdown-item">Sustainability</a>
+                        <a href="impact.html" class="dropdown-item">Impact Tracker</a>
+                        <a href="journal.html" class="dropdown-item">Journal</a>
+                        <a href="about.html" class="dropdown-item">About</a>
+                        <a href="login.html" class="dropdown-item">Account</a>
+                        <a href="dashboard.html" class="dropdown-item">Brand Dashboard</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>About EcoLux</h1>
+            <p>Pioneering sustainable luxury fashion that honors both people and planet</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="our-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Our Story</h2>
+                    <p class="story-intro">Born from a simple question: "Can fashion be both beautiful and responsible?"</p>
+                    
+                    <div class="story-narrative">
+                        <p>EcoLux began in 2018 in a small Portland studio with a revolutionary idea: luxury fashion doesn't have to cost the earth. Our founder, Sarah Chen, a former fashion industry insider, witnessed firsthand the environmental and social costs of fast fashion and knew there had to be a better way.</p>
+                        
+                        <p>What started as a small collection of organic cotton dresses has grown into a global movement. Today, we partner with over 500 artisans across 15 countries, creating timeless pieces that respect traditional craftsmanship while embracing sustainable innovation.</p>
+                        
+                        
+                    </div>
+                    
+                    <div class="story-metrics">
+                        <div class="metric">
+                            <span class="metric-number">2018</span>
+                            <span class="metric-label">Year Founded</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">500+</span>
+                            <span class="metric-label">Artisan Partners</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">15</span>
+                            <span class="metric-label">Countries</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">1M+</span>
+                            <span class="metric-label">Garments Created</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-visual">
+                    <div class="story-image">
+                        <img src="assets/about-story.jpg" alt="EcoLux Story">
+                    </div>
+                    <div class="story-quote">
+                        <blockquote>
+                            "Fashion should not cost the earth or exploit its people. We prove every day that style and sustainability can coexist beautifully."
+                        </blockquote>
+                        <cite>— Sarah Chen, Founder & CEO</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="our-mission">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="mission-content">
+                <div class="mission-pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon">🌍</div>
+                        <h3>Environmental Stewardship</h3>
+                        <p>We lead the fashion industry in environmental responsibility through innovative materials, carbon-neutral operations, and circular design principles.</p>
+                        <ul>
+                            <li>100% sustainable materials</li>
+                            <li>Carbon neutral shipping</li>
+                            <li>Zero waste production</li>
+                            <li>Circular economy model</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pillar">
+                        <div class="pillar-icon">🤝</div>
+                        <h3>Ethical Production</h3>
+                        <p>Every person in our supply chain is treated with dignity and respect, receiving fair wages and working in safe conditions.</p>
+                        <ul>
+                            <li>Fair trade certified</li>
+                            <li>Living wages guaranteed</li>
+                            <li>Safe working conditions</li>
+                            <li>Artisan empowerment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pillar">
+                        <div class="pillar-icon">✨</div>
+                        <h3>Timeless Design</h3>
+                        <p>We create pieces that transcend seasons and trends, offering enduring style that reduces consumption and waste.</p>
+                        <ul>
+                            <li>Beyond-trend designs</li>
+                            <li>Premium quality materials</li>
+                            <li>Lifetime repair service</li>
+                            <li>Capsule wardrobe focus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="our-values">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Sustainability First</h3>
+                    <p>Every decision begins with its environmental impact. We continuously challenge ourselves to reduce our footprint and innovate for a greener future.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Radical Transparency</h3>
+                    <p>We believe customers have the right to know exactly where their clothes come from. Our supply chain is an open book.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">💎</div>
+                    <h3>Uncompromising Quality</h3>
+                    <p>Luxury means exceptional quality that lasts. We never cut corners on materials, craftsmanship, or attention to detail.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Cultural Respect</h3>
+                    <p>We honor and preserve traditional craftsmanship while providing fair economic opportunities for artisan communities worldwide.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔄</div>
+                    <h3>Circular Thinking</h3>
+                    <p>We design for circularity from the start, ensuring our products can be reused, recycled, or returned to the earth safely.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Innovation Leadership</h3>
+                    <p>We push boundaries in sustainable fashion technology, materials science, and business models for positive impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="leadership-team">
+        <div class="container">
+            <h2 class="section-title">Leadership Team</h2>
+            <div class="team-intro">
+                <p>Meet the passionate individuals driving our mission to transform fashion</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/team-sarah.jpg" alt="Sarah Chen">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Chen</h3>
+                        <p class="member-title">Founder & CEO</p>
+                        <p class="member-bio">Former fashion executive turned sustainability advocate. Sarah pioneered the concept of eco-luxury and has been recognized as a leading voice in sustainable fashion.</p>
+                        <div class="member-social">
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/team-marcus.jpg" alt="Marcus Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3>Marcus Johnson</h3>
+                        <p class="member-title">Chief Sustainability Officer</p>
+                        <p class="member-bio">Environmental scientist with 15 years in corporate sustainability. Marcus ensures our operations meet the highest environmental standards.</p>
+                        <div class="member-social">
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/team-elena.jpg" alt="Elena Rodriguez">
+                    </div>
+                    <div class="member-info">
+                        <h3>Elena Rodriguez</h3>
+                        <p class="member-title">Creative Director</p>
+                        <p class="member-bio">Award-winning designer who brings sustainable innovation to luxury fashion. Elena's designs prove that eco-conscious can be extraordinarily beautiful.</p>
+                        <div class="member-social">
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/team-david.jpg" alt="David Kim">
+                    </div>
+                    <div class="member-info">
+                        <h3>David Kim</h3>
+                        <p class="member-title">Head of Supply Chain</p>
+                        <p class="member-bio">Supply chain expert specializing in ethical sourcing and transparent logistics. David ensures every partner meets our rigorous standards.</p>
+                        <div class="member-social">
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Impact -->
+    <section class="our-impact">
+        <div class="container">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="impact-content">
+                <div class="impact-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">10M</div>
+                        <div class="stat-label">Liters of Water Saved</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50K</div>
+                        <div class="stat-label">Tons CO₂ Reduced</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Artisans Empowered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Sustainable Materials</div>
+                    </div>
+                </div>
+                
+                <div class="impact-story">
+                    <h3>Beyond Numbers</h3>
+                    <p>Our impact extends far beyond environmental metrics. We're building a movement that's changing how people think about fashion, one conscious choice at a time.</p>
+                    
+                    <div class="impact-highlights">
+                        <div class="highlight">
+                            <span class="highlight-icon">🏫</span>
+                            <div>
+                                <h4>Education</h4>
+                                <p>Funded 5 schools in artisan communities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight">
+                            <span class="highlight-icon">💰</span>
+                            <div>
+                                <h4>Fair Wages</h4>
+                                <p>40% higher than industry average</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight">
+                            <span class="highlight-icon">🌊</span>
+                            <div>
+                                <h4>Water Projects</h4>
+                                <p>25 clean water wells built</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us -->
+    <section class="join-us">
+        <div class="container">
+            <div class="join-content">
+                <h2>Join the Movement</h2>
+                <p>Be part of the fashion revolution that's changing the world, one beautiful garment at a time.</p>
+                
+                <div class="join-options">
+                    <div class="join-option">
+                        <div class="option-icon">🛍️</div>
+                        <h3>Shop Conscious</h3>
+                        <p>Choose pieces that align with your values and make a positive impact with every purchase.</p>
+                        <a href="shop.html" class="btn btn-primary">Shop Collection</a>
+                    </div>
+                    
+                    <div class="join-option">
+                        <div class="option-icon">📧</div>
+                        <h3>Stay Inspired</h3>
+                        <p>Get weekly insights on sustainable fashion and exclusive stories from our artisan partners.</p>
+                        <a href="journal.html" class="btn btn-secondary">Read Journal</a>
+                    </div>
+                    
+                    <div class="join-option">
+                        <div class="option-icon">🤝</div>
+                        <h3>Partner With Us</h3>
+                        <p>Collaborate with us to create a more sustainable fashion industry for future generations.</p>
+                        <a href="#" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EcoLux Fashion</h3>
+                    <p>Sustainable luxury for conscious consumers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoLux Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/about.js"></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - EcoLux Fashion</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/brand-logo.css">
+    <link rel="stylesheet" href="css/collections.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>EcoLux</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Home
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Luxury Store</a>
+                        <a href="home2.html" class="dropdown-item">Home 2 - Brand Story</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown pages-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Pages
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="shop.html" class="dropdown-item">Shop</a>
+                        <a href="collections.html" class="dropdown-item">Collections</a>
+                        <a href="sustainability.html" class="dropdown-item">Sustainability</a>
+                        <a href="impact.html" class="dropdown-item">Impact Tracker</a>
+                        <a href="journal.html" class="dropdown-item">Journal</a>
+                        <a href="about.html" class="dropdown-item">About</a>
+                        <a href="login.html" class="dropdown-item">Account</a>
+                        <a href="dashboard.html" class="dropdown-item">Brand Dashboard</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Collections Hero -->
+    <section class="collections-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Our Collections</h1>
+            <p>Curated sustainable fashion for every season and style</p>
+        </div>
+    </section>
+
+    <!-- Seasonal Drops -->
+    <section class="seasonal-drops">
+        <div class="container">
+            <h2 class="section-title">Seasonal Drops</h2>
+            <div class="season-tabs">
+                <button class="season-tab active" data-season="spring">Spring 2024</button>
+                <button class="season-tab" data-season="summer">Summer 2024</button>
+                <button class="season-tab" data-season="fall">Fall 2024</button>
+                <button class="season-tab" data-season="winter">Winter 2024</button>
+            </div>
+            
+            <div class="season-content" id="spring">
+                <div class="season-hero">
+                    <img src="assets/spring-hero.jpg" alt="Spring Collection">
+                    <div class="season-info">
+                        <h3>Spring Bloom Collection</h3>
+                        <p>Awaken your wardrobe with our vibrant spring pieces crafted from organic cotton and natural dyes.</p>
+                        <div class="season-stats">
+                            <span>🌸 25 New Pieces</span>
+                            <span>💧 50% Less Water</span>
+                            <span>🌿 100% Organic</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Shop Spring</a>
+                    </div>
+                </div>
+                
+                <div class="season-grid">
+                    <div class="season-item">
+                        <img src="assets/spring-1.jpg" alt="Spring Dress">
+                        <div class="item-overlay">
+                            <h4>Botanical Print Dress</h4>
+                            <p>Organic cotton with natural plant dyes</p>
+                            <span class="price">$189</span>
+                        </div>
+                    </div>
+                    <div class="season-item">
+                        <img src="assets/spring-2.jpg" alt="Spring Blazer">
+                        <div class="item-overlay">
+                            <h4>Linen Spring Blazer</h4>
+                            <p>Lightweight European flax linen</p>
+                            <span class="price">$245</span>
+                        </div>
+                    </div>
+                    <div class="season-item">
+                        <img src="assets/spring-3.jpg" alt="Spring Accessories">
+                        <div class="item-overlay">
+                            <h4>Floral Silk Scarf</h4>
+                            <p>Recycled silk with botanical prints</p>
+                            <span class="price">$89</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Editions -->
+    <section class="limited-editions">
+        <div class="container">
+            <h2 class="section-title">Limited Editions</h2>
+            <div class="limited-grid">
+                <div class="limited-card featured">
+                    <div class="limited-badge">Only 50 Pieces</div>
+                    <div class="limited-image">
+                        <img src="assets/limited-1.jpg" alt="Artisan Collaboration">
+                        <div class="countdown-timer">
+                            <span class="timer-label">Ends in:</span>
+                            <div class="timer">
+                                <span class="days">02</span>
+                                <span class="separator">:</span>
+                                <span class="hours">14</span>
+                                <span class="separator">:</span>
+                                <span class="minutes">37</span>
+                                <span class="separator">:</span>
+                                <span class="seconds">22</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="limited-info">
+                        <h3>Artisan Collaboration Series</h3>
+                        <p class="artisan-name">With Maria Silva - Master Weaver</p>
+                        <p class="description">Handwoven pieces using traditional Portuguese techniques passed down through generations. Each piece is unique and tells a story.</p>
+                        <div class="limited-features">
+                            <span>✨ Handmade</span>
+                            <span>🎨 Unique Design</span>
+                            <span>📜 Certificate of Authenticity</span>
+                        </div>
+                        <div class="limited-price">
+                            <span class="price">$450</span>
+                            <span class="original-price">$580</span>
+                        </div>
+                        <button class="btn btn-primary">Reserve Now</button>
+                    </div>
+                </div>
+                
+                <div class="limited-card">
+                    <div class="limited-badge">Only 25 Pieces</div>
+                    <div class="limited-image">
+                        <img src="assets/limited-2.jpg" alt="Natural Dye Masterpiece">
+                    </div>
+                    <div class="limited-info">
+                        <h3>Natural Dye Masterpiece</h3>
+                        <p class="artisan-name">With Amina Kone - Natural Dyer</p>
+                        <p class="description">Exclusively dyed using rare botanicals from Mali. Colors that cannot be replicated.</p>
+                        <div class="limited-price">
+                            <span class="price">$320</span>
+                            <span class="original-price">$420</span>
+                        </div>
+                        <button class="btn btn-secondary">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="limited-card">
+                    <div class="limited-badge">Only 100 Pieces</div>
+                    <div class="limited-image">
+                        <img src="assets/limited-3.jpg" alt="Zero Waste Design">
+                    </div>
+                    <div class="limited-info">
+                        <h3>Zero Waste Design</h3>
+                        <p class="artisan-name">Circular Fashion Initiative</p>
+                        <p class="description">Created using innovative zero-waste pattern cutting techniques.</p>
+                        <div class="limited-price">
+                            <span class="price">$280</span>
+                            <span class="original-price">$350</span>
+                        </div>
+                        <button class="btn btn-secondary">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capsule Wardrobe -->
+    <section class="capsule-wardrobe">
+        <div class="container">
+            <h2 class="section-title">Capsule Wardrobe</h2>
+            <div class="capsule-intro">
+                <div class="capsule-content">
+                    <h3>Build Your Sustainable Wardrobe</h3>
+                    <p>Our capsule collection features 12 essential pieces that can create over 30 different outfits. Each piece is designed to be versatile, timeless, and sustainable.</p>
+                    <div class="capsule-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🌍</span>
+                            <div>
+                                <h4>Environmental Impact</h4>
+                                <p>Reduce your fashion footprint by 70%</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">💰</span>
+                            <div>
+                                <h4>Cost Effective</h4>
+                                <p>Save $2,000 annually vs fast fashion</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">⏰</span>
+                            <div>
+                                <h4>Time Saving</h4>
+                                <p>Reduce decision fatigue by 80%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="capsule-visual">
+                    <img src="assets/capsule-wardrobe.jpg" alt="Capsule Wardrobe">
+                </div>
+            </div>
+            
+            <div class="capsule-grid">
+                <div class="capsule-item">
+                    <div class="item-number">01</div>
+                    <img src="assets/capsule-1.jpg" alt="White Organic Tee">
+                    <div class="item-info">
+                        <h4>Organic White Tee</h4>
+                        <p>The perfect foundation piece</p>
+                        <span class="price">$65</span>
+                    </div>
+                </div>
+                <div class="capsule-item">
+                    <div class="item-number">02</div>
+                    <img src="assets/capsule-2.jpg" alt="Linen Shirt">
+                    <div class="item-info">
+                        <h4>Linen Button Shirt</h4>
+                        <p>Versatile for any occasion</p>
+                        <span class="price">$95</span>
+                    </div>
+                </div>
+                <div class="capsule-item">
+                    <div class="item-number">03</div>
+                    <img src="assets/capsule-3.jpg" alt="Black Trousers">
+                    <div class="item-info">
+                        <h4>Black Hemp Trousers</h4>
+                        <p>Sustainable and sophisticated</p>
+                        <span class="price">$125</span>
+                    </div>
+                </div>
+                <div class="capsule-item">
+                    <div class="item-number">04</div>
+                    <img src="assets/capsule-4.jpg" alt="Denim Jacket">
+                    <div class="item-info">
+                        <h4>Recycled Denim Jacket</h4>
+                        <p>Classic with a conscience</p>
+                        <span class="price">$145</span>
+                    </div>
+                </div>
+                <div class="capsule-item">
+                    <div class="item-number">05</div>
+                    <img src="assets/capsule-5.jpg" alt="Summer Dress">
+                    <div class="item-info">
+                        <h4>Summer Midi Dress</h4>
+                        <p>Effortless elegance</p>
+                        <span class="price">$110</span>
+                    </div>
+                </div>
+                <div class="capsule-item">
+                    <div class="item-number">06</div>
+                    <img src="assets/capsule-6.jpg" alt="Wool Sweater">
+                    <div class="item-info">
+                        <h4>Organic Wool Sweater</h4>
+                        <p>Cozy and responsible</p>
+                        <span class="price">$135</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="capsule-cta">
+                <h3>Complete Your Capsule Wardrobe</h3>
+                <p>Get all 12 pieces for $1,200 (Save $240)</p>
+                <button class="btn btn-primary">Shop Full Capsule</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EcoLux Fashion</h3>
+                    <p>Sustainable luxury for conscious consumers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoLux Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/collections.js"></script>
+</body>
+</html>

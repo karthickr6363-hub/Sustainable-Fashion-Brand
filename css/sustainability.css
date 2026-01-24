@@ -1,0 +1,599 @@
+/* Sustainability Page Specific Styles */
+
+/* Sustainability Hero */
+.sustainability-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.sustainability-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/sustainability-hero.jpg') center/cover;
+}
+
+.sustainability-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 42, 29, 0.9) 0%, rgba(15, 42, 29, 0.7) 100%);
+}
+
+.sustainability-hero .hero-content {
+    text-align: center;
+    z-index: 1;
+    padding: 0 2rem;
+}
+
+.sustainability-hero h1 {
+    color: var(--text-primary);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sustainability-hero p {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Materials Sourcing */
+.materials-sourcing {
+    padding: 6rem 0;
+    background-color: rgba(244, 241, 236, 0.05);
+}
+
+.sourcing-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sourcing-intro p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Sourcing Map */
+.sourcing-map {
+    margin-bottom: 4rem;
+}
+
+.map-container {
+    position: relative;
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 500px;
+}
+
+.map-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.marker {
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.marker-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border: 3px solid var(--primary-bg);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(201, 162, 77, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(201, 162, 77, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(201, 162, 77, 0);
+    }
+}
+
+.marker-tooltip {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+    z-index: 3;
+}
+
+.marker-tooltip h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.marker-tooltip p {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.marker-tooltip span {
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.marker:hover .marker-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Material Cards */
+.material-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.material-card {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(201, 162, 77, 0.2);
+}
+
+.material-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.material-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.material-card p {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.material-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.material-stats span {
+    background-color: rgba(201, 162, 77, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    border: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+/* Supply Chain */
+.supply-chain {
+    padding: 6rem 0;
+}
+
+.chain-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.chain-intro p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Chain Timeline */
+.chain-timeline {
+    margin-bottom: 4rem;
+}
+
+.chain-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: rgba(244, 241, 236, 0.05);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--accent-color);
+    transition: transform 0.3s ease-out;
+}
+
+.chain-step:hover {
+    transform: translateX(10px);
+}
+
+.step-number {
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.step-content p {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.step-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.step-details span {
+    background-color: rgba(201, 162, 77, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    border: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+/* Transparency Tools */
+.transparency-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tool-card {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+    transition: transform 0.3s ease-out;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.tool-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.tool-card p {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Certifications */
+.certifications {
+    padding: 6rem 0;
+    background-color: rgba(244, 241, 236, 0.05);
+}
+
+.certifications-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.certifications-intro p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.certification-card {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+    transition: transform 0.3s ease-out;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    background-color: rgba(201, 162, 77, 0.1);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.certification-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.certification-card p {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.cert-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cert-details span {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+/* Impact Calculator */
+.impact-calculator {
+    padding: 6rem 0;
+}
+
+.calculator-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.calculator-intro p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.calculator-tool {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(244, 241, 236, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+}
+
+.calculator-inputs {
+    margin-bottom: 3rem;
+}
+
+.input-group {
+    margin-bottom: 2rem;
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    background-color: rgba(244, 241, 236, 0.1);
+    border: 1px solid rgba(201, 162, 77, 0.3);
+    color: var(--text-primary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.calculator-results {
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.calculator-results h3 {
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.impact-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.impact-metric {
+    background-color: rgba(244, 241, 236, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid rgba(201, 162, 77, 0.2);
+}
+
+.metric-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.metric-value {
+    color: var(--accent-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
+}
+
+.metric-label {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.impact-comparison {
+    background-color: rgba(201, 162, 77, 0.1);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.impact-comparison h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.comparison-items {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sustainability-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .sustainability-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .material-cards,
+    .transparency-tools,
+    .certification-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chain-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .chain-step:hover {
+        transform: translateY(5px);
+    }
+    
+    .step-details {
+        justify-content: center;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    .marker-tooltip {
+        min-width: 150px;
+        padding: 0.75rem;
+    }
+    
+    .impact-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .calculator-tool {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sustainability-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .material-card,
+    .tool-card,
+    .certification-card {
+        padding: 1.5rem;
+    }
+    
+    .chain-step {
+        padding: 1.5rem;
+    }
+    
+    .impact-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .impact-metric {
+        padding: 1.5rem;
+    }
+}

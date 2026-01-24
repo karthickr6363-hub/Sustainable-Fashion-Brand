@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLux Fashion - Sustainable Style for a Better Tomorrow</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/brand-logo.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>EcoLux</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Home
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Luxury Store</a>
+                        <a href="home2.html" class="dropdown-item">Home 2 - Brand Story</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown pages-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        Pages
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="shop.html" class="dropdown-item">Shop</a>
+                        <a href="collections.html" class="dropdown-item">Collections</a>
+                        <a href="sustainability.html" class="dropdown-item">Sustainability</a>
+                        <a href="impact.html" class="dropdown-item">Impact Tracker</a>
+                        <a href="journal.html" class="dropdown-item">Journal</a>
+                        <a href="about.html" class="dropdown-item">About</a>
+                        <a href="login.html" class="dropdown-item">Account</a>
+                        <a href="dashboard.html" class="dropdown-item">Brand Dashboard</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero luxury-mode">
+        <div class="hero-background">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="assets/fashion-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">EcoLux Fashion</h1>
+            <p class="hero-tagline">Sustainable Style for a Better Tomorrow</p>
+            <div class="hero-buttons">
+                <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                <a href="home2.html" class="btn btn-secondary">Explore Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="featured-collections">
+        <div class="container">
+            <h2 class="section-title">Featured Collections</h2>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="assets/collection1.jpg" alt="Spring Collection">
+                        <div class="collection-overlay">
+                            <h3>Spring Bloom</h3>
+                            <p>Organic cotton & linen essentials</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="assets/collection2.jpg" alt="Timeless Classics">
+                        <div class="collection-overlay">
+                            <h3>Timeless Classics</h3>
+                            <p>Investment pieces that last forever</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="assets/collection3.jpg" alt="Artisan Limited">
+                        <div class="collection-overlay">
+                            <h3>Artisan Limited</h3>
+                            <p>Handcrafted with heritage techniques</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="best-sellers">
+        <div class="container">
+            <h2 class="section-title">Best Sellers</h2>
+            <div class="products-slider">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product1.jpg" alt="Organic Cotton Dress">
+                        <div class="product-actions">
+                            <button class="btn-quick-add">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Cotton Dress</h3>
+                        <p class="product-price">$189</p>
+                        <div class="product-rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product2.jpg" alt="Linen Blazer">
+                        <div class="product-actions">
+                            <button class="btn-quick-add">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Linen Blazer</h3>
+                        <p class="product-price">$245</p>
+                        <div class="product-rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product3.jpg" alt="Recycled Silk Scarf">
+                        <div class="product-actions">
+                            <button class="btn-quick-add">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Recycled Silk Scarf</h3>
+                        <p class="product-price">$89</p>
+                        <div class="product-rating">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product4.jpg" alt="Hemp Trousers">
+                        <div class="product-actions">
+                            <button class="btn-quick-add">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Hemp Trousers</h3>
+                        <p class="product-price">$156</p>
+                        <div class="product-rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We're Sustainable -->
+    <section class="sustainability-features">
+        <div class="container">
+            <h2 class="section-title">Why We're Sustainable</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Organic Materials</h3>
+                    <p>100% organic, recycled, and sustainable fabrics that are gentle on the planet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Ethical Production</h3>
+                    <p>Fair wages, safe working conditions, and partnerships with certified artisans.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Carbon Neutral Shipping</h3>
+                    <p>Every shipment is carbon offset through our partnership with environmental NGOs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Wear Your Values</h2>
+            <p>Join thousands who are making a difference through conscious fashion choices.</p>
+            <a href="impact.html" class="btn btn-primary">View Impact Report</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EcoLux Fashion</h3>
+                    <p>Sustainable luxury for conscious consumers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoLux Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
