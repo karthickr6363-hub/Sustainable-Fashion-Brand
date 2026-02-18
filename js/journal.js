@@ -1,6 +1,6 @@
 // Journal Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initCategoryFilters();
     initArticleInteractions();
     initNewsletterForm();
@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
 function initCategoryFilters() {
     const filterTabs = document.querySelectorAll('.filter-tab');
     const articleCards = document.querySelectorAll('.article-card');
-    
+
     filterTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
+        tab.addEventListener('click', function () {
             const category = this.dataset.category;
-            
+
             // Update active tab
             filterTabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Filter articles
             filterArticles(category);
         });
@@ -31,10 +31,10 @@ function initCategoryFilters() {
 // Filter Articles
 function filterArticles(category) {
     const articleCards = document.querySelectorAll('.article-card');
-    
+
     articleCards.forEach(card => {
         const cardCategory = card.dataset.category;
-        
+
         if (category === 'all' || cardCategory === category) {
             card.style.display = 'block';
             setTimeout(() => {
@@ -49,7 +49,7 @@ function filterArticles(category) {
             }, 300);
         }
     });
-    
+
     // Update load more button visibility
     updateLoadMoreButton(category);
 }
@@ -58,27 +58,27 @@ function filterArticles(category) {
 function initArticleInteractions() {
     const articleCards = document.querySelectorAll('.article-card');
     const featuredReadBtn = document.querySelector('.read-featured');
-    
+
     // Article card clicks
     articleCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             const articleData = extractArticleData(this);
             openArticleModal(articleData);
         });
-        
+
         // Add hover effects
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px) scale(1.02)';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(-5px) scale(1)';
         });
     });
-    
+
     // Featured article read button
     if (featuredReadBtn) {
-        featuredReadBtn.addEventListener('click', function(e) {
+        featuredReadBtn.addEventListener('click', function (e) {
             e.preventDefault();
             const featuredData = extractFeaturedArticleData();
             openArticleModal(featuredData);
@@ -96,7 +96,7 @@ function extractArticleData(articleCard) {
     const authorName = articleCard.querySelector('.author-name').textContent;
     const authorImage = articleCard.querySelector('.article-author img').src;
     const image = articleCard.querySelector('.article-image img').src;
-    
+
     return {
         title,
         category,
@@ -121,7 +121,7 @@ function extractFeaturedArticleData() {
     const authorTitle = document.querySelector('.featured-text .author-title').textContent;
     const authorImage = document.querySelector('.featured-text .article-author img').src;
     const image = document.querySelector('.featured-image img').src;
-    
+
     return {
         title,
         category,
@@ -252,7 +252,7 @@ function generateArticleContent(title, category) {
             <p>Remember that sustainable living isn't about perfection. It's about progress, intention, and making the best choices we can with the resources and knowledge we have. Every conscious choice, no matter how small, contributes to a more sustainable future.</p>
         `
     };
-    
+
     // Default content if category not found
     const defaultContent = `
         <h2>${title}</h2>
@@ -268,7 +268,7 @@ function generateArticleContent(title, category) {
         
         <p>Thank you for joining us on this journey toward a more sustainable future, one conscious choice at a time.</p>
     `;
-    
+
     return contentTemplates[category] || defaultContent;
 }
 
@@ -276,17 +276,17 @@ function generateArticleContent(title, category) {
 function initArticleModal() {
     const modal = document.getElementById('article-modal');
     const closeBtn = modal.querySelector('.modal-close');
-    
+
     closeBtn.addEventListener('click', closeArticleModal);
-    
-    modal.addEventListener('click', function(e) {
+
+    modal.addEventListener('click', function (e) {
         if (e.target === modal) {
             closeArticleModal();
         }
     });
-    
+
     // Close on Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && modal.style.display === 'block') {
             closeArticleModal();
         }
@@ -296,7 +296,7 @@ function initArticleModal() {
 // Open Article Modal
 function openArticleModal(articleData) {
     const modal = document.getElementById('article-modal');
-    
+
     // Update modal content
     document.getElementById('modal-category').textContent = articleData.category;
     document.getElementById('modal-date').textContent = articleData.date;
@@ -306,7 +306,7 @@ function openArticleModal(articleData) {
     document.getElementById('modal-author-image').src = articleData.authorImage;
     document.getElementById('modal-hero-image').src = articleData.image;
     document.getElementById('modal-content').innerHTML = articleData.content;
-    
+
     // Add author title if available
     if (articleData.authorTitle) {
         const authorTitleElement = document.getElementById('modal-author-title');
@@ -315,14 +315,14 @@ function openArticleModal(articleData) {
             authorTitleElement.style.display = 'block';
         }
     }
-    
+
     // Show modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    
+
     // Scroll to top of modal
     modal.scrollTop = 0;
-    
+
     // Initialize article actions
     initArticleActions();
 }
@@ -338,15 +338,15 @@ function closeArticleModal() {
 function initArticleActions() {
     const shareBtn = document.querySelector('.share-article');
     const bookmarkBtn = document.querySelector('.bookmark-article');
-    
+
     if (shareBtn) {
-        shareBtn.onclick = function() {
+        shareBtn.onclick = function () {
             shareArticle();
         };
     }
-    
+
     if (bookmarkBtn) {
-        bookmarkBtn.onclick = function() {
+        bookmarkBtn.onclick = function () {
             toggleBookmark(this);
         };
     }
@@ -357,7 +357,7 @@ function shareArticle() {
     const title = document.getElementById('modal-title').textContent;
     const url = window.location.href;
     const shareText = `Read "${title}" on EcoLux Fashion Journal - inspiring stories about sustainable fashion and conscious living.`;
-    
+
     if (navigator.share) {
         navigator.share({
             title: title,
@@ -375,7 +375,7 @@ function shareArticle() {
 // Toggle Bookmark
 function toggleBookmark(button) {
     button.classList.toggle('bookmarked');
-    
+
     if (button.classList.contains('bookmarked')) {
         button.textContent = 'Bookmarked ✓';
         button.style.backgroundColor = '#27ae60';
@@ -390,30 +390,30 @@ function toggleBookmark(button) {
 // Newsletter Form
 function initNewsletterForm() {
     const form = document.querySelector('.newsletter-form');
-    
+
     if (form) {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const email = this.querySelector('input[type="email"]').value;
-            
+
             if (email) {
                 // Show loading state
                 const button = this.querySelector('button');
                 const originalText = button.textContent;
                 button.textContent = 'Subscribing...';
                 button.disabled = true;
-                
+
                 // Simulate subscription
                 setTimeout(() => {
                     button.textContent = 'Subscribed ✓';
                     button.style.backgroundColor = '#27ae60';
-                    
+
                     window.EcoLux.showSuccessToast('Successfully subscribed to newsletter!');
-                    
+
                     // Reset form
                     this.reset();
-                    
+
                     // Reset button after 3 seconds
                     setTimeout(() => {
                         button.textContent = originalText;
@@ -429,9 +429,9 @@ function initNewsletterForm() {
 // Load More Articles
 function initLoadMore() {
     const loadMoreBtn = document.querySelector('.load-more');
-    
+
     if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', function() {
+        loadMoreBtn.addEventListener('click', function () {
             loadMoreArticles();
         });
     }
@@ -441,36 +441,36 @@ function initLoadMore() {
 function loadMoreArticles() {
     const button = document.querySelector('.load-more');
     const container = document.querySelector('.articles-container');
-    
+
     // Show loading state
     button.textContent = 'Loading...';
     button.disabled = true;
-    
+
     // Simulate loading more articles
     setTimeout(() => {
         const newArticles = generateMockArticles(3);
-        
+
         newArticles.forEach((article, index) => {
             const articleElement = createArticleElement(article);
             articleElement.style.opacity = '0';
             articleElement.style.transform = 'translateY(20px)';
-            
+
             container.appendChild(articleElement);
-            
+
             // Animate in
             setTimeout(() => {
                 articleElement.style.opacity = '1';
                 articleElement.style.transform = 'translateY(0)';
             }, 100 * index);
         });
-        
+
         // Reset button
         button.textContent = 'Load More Articles';
         button.disabled = false;
-        
+
         // Reinitialize article interactions for new articles
         initNewArticleInteractions();
-        
+
         window.EcoLux.showSuccessToast('3 more articles loaded!');
     }, 1000);
 }
@@ -485,9 +485,9 @@ function generateMockArticles(count) {
         'Sustainable Fashion on a Budget',
         'The Future of Textile Innovation'
     ];
-    
+
     const categories = ['sustainability', 'styling', 'industry', 'lifestyle', 'artisan'];
-    
+
     const articles = [];
     for (let i = 0; i < count; i++) {
         articles.push({
@@ -497,10 +497,17 @@ function generateMockArticles(count) {
             readTime: (Math.floor(Math.random() * 5) + 3) + ' min read',
             excerpt: 'Discover the latest insights and trends in sustainable fashion that are shaping the industry.',
             authorName: 'Guest Writer',
-            image: `assets/article-${(i + 7) % 6 + 1}.jpg`
+            image: [
+                'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2670&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2670&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1551232864-3f5223813b20?q=80&w=2694&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=2583&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1617325247661-675ab4b64ae8?q=80&w=2671&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?q=80&w=2564&auto=format&fit=crop'
+            ][i % 6]
         });
     }
-    
+
     return articles;
 }
 
@@ -509,7 +516,7 @@ function createArticleElement(article) {
     const articleDiv = document.createElement('article');
     articleDiv.className = 'article-card';
     articleDiv.dataset.category = article.category;
-    
+
     articleDiv.innerHTML = `
         <div class="article-image">
             <img src="${article.image}" alt="${article.title}">
@@ -525,34 +532,34 @@ function createArticleElement(article) {
             <h3>${article.title}</h3>
             <p>${article.excerpt}</p>
             <div class="article-author">
-                <img src="assets/author-default.jpg" alt="Author">
+                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2680&auto=format&fit=crop" alt="Author">
                 <span class="author-name">${article.authorName}</span>
             </div>
         </div>
     `;
-    
+
     articleDiv.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
-    
+
     return articleDiv;
 }
 
 // Initialize New Article Interactions
 function initNewArticleInteractions() {
     const newArticles = document.querySelectorAll('.article-card:not(.initialized)');
-    
+
     newArticles.forEach(card => {
         card.classList.add('initialized');
-        
-        card.addEventListener('click', function() {
+
+        card.addEventListener('click', function () {
             const articleData = extractArticleData(this);
             openArticleModal(articleData);
         });
-        
-        card.addEventListener('mouseenter', function() {
+
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px) scale(1.02)';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(-5px) scale(1)';
         });
     });
@@ -562,7 +569,7 @@ function initNewArticleInteractions() {
 function updateLoadMoreButton(category) {
     const button = document.querySelector('.load-more');
     const visibleArticles = document.querySelectorAll('.article-card:not([style*="display: none"])');
-    
+
     // Hide load more if all articles are shown or if category is specific
     if (category !== 'all' || visibleArticles.length >= 9) {
         button.style.display = 'none';
@@ -578,7 +585,7 @@ function initAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -586,7 +593,7 @@ function initAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements
     document.querySelectorAll('.article-card, .featured-content').forEach(element => {
         element.classList.add('scroll-reveal');

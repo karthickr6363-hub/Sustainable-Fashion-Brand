@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sustainability - EcoLux Fashion</title>
-    
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/brand-logo.css">
     <link rel="stylesheet" href="css/sustainability.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="main-nav">
@@ -24,32 +30,15 @@
                 <h1>EcoLux</h1>
             </div>
             <ul class="nav-menu">
-                <li class="nav-dropdown">
-                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
-                        Home
-                        <span class="dropdown-arrow">▼</span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">Home 1 - Luxury Store</a>
-                        <a href="home2.html" class="dropdown-item">Home 2 - Brand Story</a>
-                    </div>
-                </li>
-                <li class="nav-dropdown pages-dropdown">
-                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">
-                        Pages
-                        <span class="dropdown-arrow">▼</span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="shop.html" class="dropdown-item">Shop</a>
-                        <a href="collections.html" class="dropdown-item">Collections</a>
-                        <a href="sustainability.html" class="dropdown-item">Sustainability</a>
-                        <a href="impact.html" class="dropdown-item">Impact Tracker</a>
-                        <a href="journal.html" class="dropdown-item">Journal</a>
-                        <a href="about.html" class="dropdown-item">About</a>
-                        <a href="login.html" class="dropdown-item">Account</a>
-                        <a href="dashboard.html" class="dropdown-item">Brand Dashboard</a>
-                    </div>
-                </li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home2.html" class="nav-link">Home 2</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="journal.html" class="nav-link">Journal</a></li>
+                <li><a href="impact.html" class="nav-link">Impact</a></li>
+                <li><a href="login.html" class="nav-link">Sign Up</a></li>
             </ul>
             <div class="nav-toggle">
                 <span></span>
@@ -75,12 +64,14 @@
         <div class="container">
             <h2 class="section-title">Materials Sourcing Map</h2>
             <div class="sourcing-intro">
-                <p>We trace every material from farm to finished garment, ensuring ethical practices and minimal environmental impact.</p>
+                <p>We trace every material from farm to finished garment, ensuring ethical practices and minimal
+                    environmental impact.</p>
             </div>
-            
+
             <div class="sourcing-map">
                 <div class="map-container">
-                    <img src="assets/sourcing-map.jpg" alt="Global Sourcing Map" usemap="#sourcing-map">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2674&auto=format&fit=crop"
+                        alt="Global Sourcing Map" usemap="#sourcing-map">
                     <map name="sourcing-map">
                         <area shape="circle" coords="150,200,30" href="#india" alt="India">
                         <area shape="circle" coords="400,180,30" href="#portugal" alt="Portugal">
@@ -88,7 +79,7 @@
                         <area shape="circle" coords="200,250,30" href="#turkey" alt="Turkey">
                         <area shape="circle" coords="450,300,30" href="#peru" alt="Peru">
                     </map>
-                    
+
                     <div class="map-markers">
                         <div class="marker" style="left: 20%; top: 40%;" data-location="india">
                             <span class="marker-dot"></span>
@@ -133,31 +124,33 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="sourcing-details">
                 <div class="material-cards">
                     <div class="material-card">
                         <div class="material-icon">🌱</div>
                         <h3>Organic Cotton</h3>
-                        <p>Grown without pesticides or synthetic fertilizers, using 88% less water than conventional cotton.</p>
+                        <p>Grown without pesticides or synthetic fertilizers, using 88% less water than conventional
+                            cotton.</p>
                         <div class="material-stats">
                             <span>📍 India, Turkey</span>
                             <span>💧 88% less water</span>
                             <span>🌍 Carbon neutral</span>
                         </div>
                     </div>
-                    
+
                     <div class="material-card">
                         <div class="material-icon">🌾</div>
                         <h3>European Linen</h3>
-                        <p>Flax linen that requires minimal water and grows in poor soil, making it incredibly sustainable.</p>
+                        <p>Flax linen that requires minimal water and grows in poor soil, making it incredibly
+                            sustainable.</p>
                         <div class="material-stats">
                             <span>📍 Portugal, France</span>
                             <span>💧 60% less water</span>
                             <span>♻️ 100% biodegradable</span>
                         </div>
                     </div>
-                    
+
                     <div class="material-card">
                         <div class="material-icon">🎨</div>
                         <h3>Natural Dyes</h3>
@@ -168,11 +161,12 @@
                             <span>🎨 Unique colors</span>
                         </div>
                     </div>
-                    
+
                     <div class="material-card">
                         <div class="material-icon">🐑</div>
                         <h3>Organic Wool</h3>
-                        <p>From free-range alpacas and sheep raised on organic farms with ethical treatment standards.</p>
+                        <p>From free-range alpacas and sheep raised on organic farms with ethical treatment standards.
+                        </p>
                         <div class="material-stats">
                             <span>📍 Peru, New Zealand</span>
                             <span>🤝 Ethical farms</span>
@@ -189,15 +183,17 @@
         <div class="container">
             <h2 class="section-title">Supply Chain Transparency</h2>
             <div class="chain-intro">
-                <p>From farm to closet, we believe in complete transparency. Every step of our supply chain is documented and verified.</p>
+                <p>From farm to closet, we believe in complete transparency. Every step of our supply chain is
+                    documented and verified.</p>
             </div>
-            
+
             <div class="chain-timeline">
                 <div class="chain-step">
                     <div class="step-number">01</div>
                     <div class="step-content">
                         <h3>Farm Sourcing</h3>
-                        <p>We partner directly with organic farms, ensuring fair prices and sustainable farming practices.</p>
+                        <p>We partner directly with organic farms, ensuring fair prices and sustainable farming
+                            practices.</p>
                         <div class="step-details">
                             <span>✅ Certified Organic</span>
                             <span>✅ Fair Trade</span>
@@ -205,12 +201,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="chain-step">
                     <div class="step-number">02</div>
                     <div class="step-content">
                         <h3>Material Processing</h3>
-                        <p>Raw materials are processed using eco-friendly methods that minimize water usage and chemical exposure.</p>
+                        <p>Raw materials are processed using eco-friendly methods that minimize water usage and chemical
+                            exposure.</p>
                         <div class="step-details">
                             <span>✅ Closed-loop systems</span>
                             <span>✅ Water recycling</span>
@@ -218,12 +215,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="chain-step">
                     <div class="step-number">03</div>
                     <div class="step-content">
                         <h3>Artisan Production</h3>
-                        <p>Skilled artisans craft our pieces using traditional techniques passed down through generations.</p>
+                        <p>Skilled artisans craft our pieces using traditional techniques passed down through
+                            generations.</p>
                         <div class="step-details">
                             <span>✅ Living wages</span>
                             <span>✅ Safe conditions</span>
@@ -231,12 +229,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="chain-step">
                     <div class="step-number">04</div>
                     <div class="step-content">
                         <h3>Quality Control</h3>
-                        <p>Each garment is inspected for quality, durability, and adherence to our sustainability standards.</p>
+                        <p>Each garment is inspected for quality, durability, and adherence to our sustainability
+                            standards.</p>
                         <div class="step-details">
                             <span>✅ Rigorous testing</span>
                             <span>✅ Lifetime repair</span>
@@ -244,7 +243,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="chain-step">
                     <div class="step-number">05</div>
                     <div class="step-content">
@@ -258,20 +257,20 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="transparency-tools">
                 <div class="tool-card">
                     <h3>QR Code Tracking</h3>
                     <p>Every garment includes a QR code that reveals its complete journey from farm to closet.</p>
                     <button class="btn btn-secondary">Try Demo</button>
                 </div>
-                
+
                 <div class="tool-card">
                     <h3>Blockchain Verification</h3>
                     <p>Our supply chain data is stored on blockchain for immutable transparency.</p>
                     <button class="btn btn-secondary">Learn More</button>
                 </div>
-                
+
                 <div class="tool-card">
                     <h3>Live Factory Cameras</h3>
                     <p>Watch our production facilities in real-time to see ethical practices in action.</p>
@@ -288,11 +287,12 @@
             <div class="certifications-intro">
                 <p>We hold the highest standards in sustainable fashion, verified by independent organizations.</p>
             </div>
-            
+
             <div class="certification-grid">
                 <div class="certification-card">
                     <div class="cert-logo">
-                        <img src="assets/cert-gots.jpg" alt="GOTS Certified">
+                        <img src="https://images.unsplash.com/photo-1594361487118-f4e2b2288781?q=80&w=2574&auto=format&fit=crop"
+                            alt="GOTS Certified">
                     </div>
                     <h3>Global Organic Textile Standard</h3>
                     <p>The worldwide leading textile processing standard for organic fibers.</p>
@@ -302,10 +302,11 @@
                         <span>✓ Social criteria</span>
                     </div>
                 </div>
-                
+
                 <div class="certification-card">
                     <div class="cert-logo">
-                        <img src="assets/cert-fairtrade.jpg" alt="Fair Trade Certified">
+                        <img src="https://images.unsplash.com/photo-1605333329107-1e5088f2441c?q=80&w=2670&auto=format&fit=crop"
+                            alt="Fair Trade Certified">
                     </div>
                     <h3>Fair Trade Certified</h3>
                     <p>Ensuring fair prices, decent working conditions, and community development.</p>
@@ -315,10 +316,11 @@
                         <span>✓ Community fund</span>
                     </div>
                 </div>
-                
+
                 <div class="certification-card">
                     <div class="cert-logo">
-                        <img src="assets/cert-bcorp.jpg" alt="B Corporation">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2670&auto=format&fit=crop"
+                            alt="B Corporation">
                     </div>
                     <h3>B Corporation</h3>
                     <p>Certified for meeting the highest standards of social and environmental performance.</p>
@@ -328,10 +330,11 @@
                         <span>✓ Transparency</span>
                     </div>
                 </div>
-                
+
                 <div class="certification-card">
                     <div class="cert-logo">
-                        <img src="assets/cert-carbon.jpg" alt="Carbon Neutral">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2670&auto=format&fit=crop"
+                            alt="Carbon Neutral">
                     </div>
                     <h3>Carbon Neutral</h3>
                     <p>We measure, reduce, and offset our carbon footprint to achieve net-zero emissions.</p>
@@ -341,10 +344,11 @@
                         <span>✓ Carbon offsetting</span>
                     </div>
                 </div>
-                
+
                 <div class="certification-card">
                     <div class="cert-logo">
-                        <img src="assets/cert-cradle.jpg" alt="Cradle to Cradle">
+                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2670&auto=format&fit=crop"
+                            alt="Cradle to Cradle">
                     </div>
                     <h3>Cradle to Cradle</h3>
                     <p>Products designed for circularity with safe materials and renewable energy.</p>
@@ -354,10 +358,11 @@
                         <span>✓ Renewable energy</span>
                     </div>
                 </div>
-                
+
                 <div class="certification-card">
                     <div class="cert-logo">
-                        <img src="assets/cert-oeke.jpg" alt="OEKO-TEX">
+                        <img src="https://images.unsplash.com/photo-1528458909336-e7a0adfed0a5?q=80&w=2548&auto=format&fit=crop"
+                            alt="OEKO-TEX">
                     </div>
                     <h3>OEKO-TEX Standard 100</h3>
                     <p>Testing for harmful substances to ensure textile safety from yarn to finished product.</p>
@@ -378,14 +383,14 @@
             <div class="calculator-intro">
                 <p>See how your sustainable fashion choices make a difference compared to conventional fashion.</p>
             </div>
-            
+
             <div class="calculator-tool">
                 <div class="calculator-inputs">
                     <div class="input-group">
                         <label for="items-purchased">Number of items purchased:</label>
                         <input type="number" id="items-purchased" min="1" max="50" value="5">
                     </div>
-                    
+
                     <div class="input-group">
                         <label for="material-type">Primary material:</label>
                         <select id="material-type">
@@ -395,10 +400,10 @@
                             <option value="recycled">Recycled Materials</option>
                         </select>
                     </div>
-                    
+
                     <button class="btn btn-primary" id="calculate-impact">Calculate My Impact</button>
                 </div>
-                
+
                 <div class="calculator-results" id="impact-results" style="display: none;">
                     <h3>Your Environmental Savings</h3>
                     <div class="impact-metrics">
@@ -407,33 +412,33 @@
                             <div class="metric-value" id="water-saved">0</div>
                             <div class="metric-label">Liters of Water Saved</div>
                         </div>
-                        
+
                         <div class="impact-metric">
                             <div class="metric-icon">🌍</div>
                             <div class="metric-value" id="co2-reduced">0</div>
                             <div class="metric-label">kg CO₂ Reduced</div>
                         </div>
-                        
+
                         <div class="impact-metric">
                             <div class="metric-icon">🏭</div>
                             <div class="metric-value" id="chemicals-avoided">0</div>
                             <div class="metric-label">Grams of Chemicals Avoided</div>
                         </div>
-                        
+
                         <div class="impact-metric">
                             <div class="metric-icon">⚡</div>
                             <div class="metric-value" id="energy-saved">0</div>
                             <div class="metric-label">kWh Energy Saved</div>
                         </div>
                     </div>
-                    
+
                     <div class="impact-comparison">
                         <h4>Equivalent to:</h4>
                         <div class="comparison-items">
                             <span id="comparison-text">Loading...</span>
                         </div>
                     </div>
-                    
+
                     <button class="btn btn-secondary" id="share-impact">Share My Impact</button>
                 </div>
             </div>
@@ -445,7 +450,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>EcoLux Fashion</h3>
+                    <h3>EcoLux</h3>
                     <p>Sustainable luxury for conscious consumers.</p>
                 </div>
                 <div class="footer-section">
@@ -477,7 +482,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 EcoLux Fashion. All rights reserved.</p>
+                <p>&copy; 2026 EcoLux Fashion. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -487,4 +492,5 @@
     <script src="js/animations.js"></script>
     <script src="js/sustainability.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 // Sustainability Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initInteractiveMap();
     initImpactCalculator();
     initCertificationInteractions();
@@ -11,19 +11,19 @@ document.addEventListener('DOMContentLoaded', function() {
 // Interactive Map
 function initInteractiveMap() {
     const markers = document.querySelectorAll('.marker');
-    
+
     markers.forEach(marker => {
-        marker.addEventListener('click', function() {
+        marker.addEventListener('click', function () {
             const location = this.dataset.location;
             showLocationDetails(location);
         });
-        
+
         // Add hover effect
-        marker.addEventListener('mouseenter', function() {
+        marker.addEventListener('mouseenter', function () {
             this.querySelector('.marker-dot').style.transform = 'translate(-50%, -50%) scale(1.2)';
         });
-        
-        marker.addEventListener('mouseleave', function() {
+
+        marker.addEventListener('mouseleave', function () {
             this.querySelector('.marker-dot').style.transform = 'translate(-50%, -50%) scale(1)';
         });
     });
@@ -42,7 +42,7 @@ function showLocationDetails(location) {
                 water: '88% less than conventional',
                 income: '40% higher than average'
             },
-            image: 'assets/india-farm.jpg'
+            image: 'https://images.unsplash.com/photo-1627885237837-7f9172c918ee?q=80&w=2574&auto=format&fit=crop'
         },
         portugal: {
             name: 'Portugal',
@@ -54,7 +54,7 @@ function showLocationDetails(location) {
                 years: 'Average 25 years experience',
                 production: '50,000+ meters/year'
             },
-            image: 'assets/portugal-workshop.jpg'
+            image: 'https://images.unsplash.com/photo-1605333329107-1e5088f2441c?q=80&w=2670&auto=format&fit=crop'
         },
         mali: {
             name: 'Mali',
@@ -66,7 +66,7 @@ function showLocationDetails(location) {
                 colors: '200+ unique shades',
                 process: 'Zero chemical waste'
             },
-            image: 'assets/mali-dye.jpg'
+            image: 'https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=2672&auto=format&fit=crop'
         },
         turkey: {
             name: 'Turkey',
@@ -78,7 +78,7 @@ function showLocationDetails(location) {
                 energy: 'Solar powered',
                 output: '5,000 tons/year'
             },
-            image: 'assets/turkey-hemp.jpg'
+            image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=2574&auto=format&fit=crop'
         },
         peru: {
             name: 'Peru',
@@ -90,17 +90,17 @@ function showLocationDetails(location) {
                 elevation: '3,500+ meters',
                 quality: 'Premium grade wool'
             },
-            image: 'assets/peru-wool.jpg'
+            image: 'https://images.unsplash.com/photo-1484557985045-edf25e08da73?q=80&w=2673&auto=format&fit=crop'
         }
     };
-    
+
     const data = locationData[location];
     if (!data) return;
-    
+
     // Create modal
     const modal = createLocationModal(data);
     document.body.appendChild(modal);
-    
+
     // Show modal with animation
     setTimeout(() => {
         modal.style.display = 'block';
@@ -124,7 +124,7 @@ function createLocationModal(data) {
         z-index: 2000;
         transition: opacity 0.3s ease-out;
     `;
-    
+
     modal.innerHTML = `
         <div class="location-modal-content" style="
             position: absolute;
@@ -196,7 +196,7 @@ function createLocationModal(data) {
             </div>
         </div>
     `;
-    
+
     // Add close functionality
     const closeBtn = modal.querySelector('.modal-close');
     closeBtn.addEventListener('click', () => {
@@ -205,7 +205,7 @@ function createLocationModal(data) {
             modal.remove();
         }, 300);
     });
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.style.opacity = '0';
@@ -214,7 +214,7 @@ function createLocationModal(data) {
             }, 300);
         }
     });
-    
+
     return modal;
 }
 
@@ -222,11 +222,11 @@ function createLocationModal(data) {
 function initImpactCalculator() {
     const calculateBtn = document.getElementById('calculate-impact');
     const shareBtn = document.getElementById('share-impact');
-    
+
     if (calculateBtn) {
         calculateBtn.addEventListener('click', calculateImpact);
     }
-    
+
     if (shareBtn) {
         shareBtn.addEventListener('click', shareImpact);
     }
@@ -236,7 +236,7 @@ function initImpactCalculator() {
 function calculateImpact() {
     const itemsPurchased = parseInt(document.getElementById('items-purchased').value) || 1;
     const materialType = document.getElementById('material-type').value;
-    
+
     // Impact factors per item compared to conventional fashion
     const impactFactors = {
         'organic-cotton': {
@@ -264,32 +264,32 @@ function calculateImpact() {
             energy: 45
         }
     };
-    
+
     const factors = impactFactors[materialType];
-    
+
     // Calculate totals
     const waterSaved = factors.water * itemsPurchased;
     const co2Reduced = factors.co2 * itemsPurchased;
     const chemicalsAvoided = factors.chemicals * itemsPurchased;
     const energySaved = factors.energy * itemsPurchased;
-    
+
     // Update display with animation
     updateImpactDisplay('water-saved', waterSaved);
     updateImpactDisplay('co2-reduced', co2Reduced);
     updateImpactDisplay('chemicals-avoided', chemicalsAvoided);
     updateImpactDisplay('energy-saved', energySaved);
-    
+
     // Generate comparison text
     const comparisonText = generateComparison(waterSaved, co2Reduced, energySaved);
     document.getElementById('comparison-text').textContent = comparisonText;
-    
+
     // Show results
     const resultsDiv = document.getElementById('impact-results');
     resultsDiv.style.display = 'block';
-    
+
     // Scroll to results
     resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    
+
     // Show success message
     window.EcoLux.showSuccessToast('Impact calculated successfully!');
 }
@@ -301,14 +301,14 @@ function updateImpactDisplay(elementId, targetValue) {
     const steps = 60;
     const increment = targetValue / steps;
     let current = 0;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= targetValue) {
             current = targetValue;
             clearInterval(timer);
         }
-        
+
         if (elementId === 'co2-reduced') {
             element.textContent = current.toFixed(1);
         } else {
@@ -320,7 +320,7 @@ function updateImpactDisplay(elementId, targetValue) {
 // Generate Comparison Text
 function generateComparison(waterSaved, co2Reduced, energySaved) {
     const comparisons = [];
-    
+
     // Water comparisons
     if (waterSaved >= 10000) {
         comparisons.push(`Enough drinking water for ${Math.floor(waterSaved / 2000)} people for a year`);
@@ -329,7 +329,7 @@ function generateComparison(waterSaved, co2Reduced, energySaved) {
     } else {
         comparisons.push(`Enough water to fill ${Math.floor(waterSaved / 200)} bathtubs`);
     }
-    
+
     // CO2 comparisons
     if (co2Reduced >= 20) {
         comparisons.push(`Equivalent to planting ${Math.floor(co2Reduced / 10)} trees`);
@@ -338,7 +338,7 @@ function generateComparison(waterSaved, co2Reduced, energySaved) {
     } else {
         comparisons.push(`Equivalent to ${Math.floor(co2Reduced / 0.005)} smartphone charges`);
     }
-    
+
     // Energy comparisons
     if (energySaved >= 100) {
         comparisons.push(`Enough energy to power ${Math.floor(energySaved / 30)} homes for a month`);
@@ -347,7 +347,7 @@ function generateComparison(waterSaved, co2Reduced, energySaved) {
     } else {
         comparisons.push(`Enough energy to watch ${Math.floor(energySaved / 0.1)} hours of TV`);
     }
-    
+
     return comparisons.join(' | ');
 }
 
@@ -357,13 +357,13 @@ function shareImpact() {
     const materialType = document.getElementById('material-type').value;
     const waterSaved = document.getElementById('water-saved').textContent;
     const co2Reduced = document.getElementById('co2-reduced').textContent;
-    
+
     const shareText = `I just calculated my sustainable fashion impact! By choosing ${itemsPurchased} ${materialType.replace('-', ' ')} items from EcoLux, I'm saving ${waterSaved} liters of water and reducing ${co2Reduced} kg of CO₂. 🌍♻️`;
-    
+
     // Create share modal
     const shareModal = createShareModal(shareText);
     document.body.appendChild(shareModal);
-    
+
     setTimeout(() => {
         shareModal.style.display = 'block';
     }, 100);
@@ -383,7 +383,7 @@ function createShareModal(shareText) {
         display: none;
         z-index: 2000;
     `;
-    
+
     modal.innerHTML = `
         <div class="share-modal-content" style="
             position: absolute;
@@ -454,47 +454,47 @@ function createShareModal(shareText) {
             ">Close</button>
         </div>
     `;
-    
+
     // Add event listeners
     const closeBtn = modal.querySelector('.modal-close');
     const copyBtn = modal.querySelector('.copy-btn');
-    
+
     closeBtn.addEventListener('click', () => {
         modal.remove();
     });
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.remove();
         }
     });
-    
+
     copyBtn.addEventListener('click', () => {
         navigator.clipboard.writeText(shareText).then(() => {
             window.EcoLux.showSuccessToast('Text copied to clipboard!');
             modal.remove();
         });
     });
-    
+
     return modal;
 }
 
 // Certification Interactions
 function initCertificationInteractions() {
     const certCards = document.querySelectorAll('.certification-card');
-    
+
     certCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             const certName = this.querySelector('h3').textContent;
             showCertificationDetails(certName);
         });
-        
+
         // Add hover effect
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px) scale(1.02)';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
@@ -517,23 +517,23 @@ function showCertificationDetails(certName) {
         }
         // Add more certification details as needed
     };
-    
+
     const details = certDetails[certName];
     if (!details) return;
-    
+
     window.EcoLux.showSuccessToast(`${certName}: ${details.description}`);
 }
 
 // Transparency Tools
 function initTransparencyTools() {
     const toolButtons = document.querySelectorAll('.tool-card .btn');
-    
+
     toolButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             e.preventDefault();
             const toolName = this.closest('.tool-card').querySelector('h3').textContent;
-            
-            switch(toolName) {
+
+            switch (toolName) {
                 case 'QR Code Tracking':
                     showQRTrackingDemo();
                     break;
@@ -566,7 +566,7 @@ function showQRTrackingDemo() {
         justify-content: center;
         z-index: 2000;
     `;
-    
+
     modal.innerHTML = `
         <div style="
             background: var(--primary-bg);
@@ -604,12 +604,12 @@ function showQRTrackingDemo() {
             ">Close</button>
         </div>
     `;
-    
+
     document.body.appendChild(modal);
-    
+
     const closeBtn = modal.querySelector('.modal-close');
     closeBtn.addEventListener('click', () => modal.remove());
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.remove();
     });
@@ -632,7 +632,7 @@ function initAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -640,7 +640,7 @@ function initAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements
     document.querySelectorAll('.material-card, .chain-step, .tool-card, .certification-card').forEach(element => {
         element.classList.add('scroll-reveal');

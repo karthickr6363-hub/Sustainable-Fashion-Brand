@@ -17,7 +17,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../assets/sustainability-hero.jpg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2670&auto=format&fit=crop') center/cover;
 }
 
 .sustainability-hero .hero-overlay {
@@ -115,9 +115,11 @@
     0% {
         box-shadow: 0 0 0 0 rgba(201, 162, 77, 0.7);
     }
+
     70% {
         box-shadow: 0 0 0 10px rgba(201, 162, 77, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(201, 162, 77, 0);
     }
@@ -530,45 +532,45 @@
     .sustainability-hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .sustainability-hero p {
         font-size: 1.1rem;
     }
-    
+
     .material-cards,
     .transparency-tools,
     .certification-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .chain-step {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
     }
-    
+
     .chain-step:hover {
         transform: translateY(5px);
     }
-    
+
     .step-details {
         justify-content: center;
     }
-    
+
     .map-container {
         height: 300px;
     }
-    
+
     .marker-tooltip {
         min-width: 150px;
         padding: 0.75rem;
     }
-    
+
     .impact-metrics {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
-    
+
     .calculator-tool {
         padding: 2rem 1.5rem;
     }
@@ -578,21 +580,21 @@
     .sustainability-hero h1 {
         font-size: 2rem;
     }
-    
+
     .material-card,
     .tool-card,
     .certification-card {
         padding: 1.5rem;
     }
-    
+
     .chain-step {
         padding: 1.5rem;
     }
-    
+
     .impact-metrics {
         grid-template-columns: 1fr;
     }
-    
+
     .impact-metric {
         padding: 1.5rem;
     }

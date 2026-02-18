@@ -1,6 +1,6 @@
 // Main JavaScript for EcoLux Fashion Website
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initNavigation();
     initScrollAnimations();
     initProductInteractions();
@@ -17,7 +17,7 @@ function initNavigation() {
 
     // Mobile menu toggle
     if (navToggle) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
         });
@@ -25,23 +25,27 @@ function initNavigation() {
 
     // Active link highlighting
     const currentPath = window.location.pathname;
+    // Get the current page filename, defaulting to index.html if empty (root)
+    const currentPage = currentPath.split('/').pop() || 'index.html';
+
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath || 
-            (currentPath === '/' && link.getAttribute('href') === 'index.html')) {
+        const linkHref = link.getAttribute('href');
+        // Check if the link matches the current page
+        if (linkHref === currentPage) {
             link.classList.add('active');
         }
     });
 
     // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (!e.target.closest('.main-nav') && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
         }
     });
-    
+
     // Close dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (!e.target.closest('.nav-dropdown')) {
             closeAllDropdowns();
         }
@@ -53,20 +57,20 @@ function toggleDropdown(button) {
     const dropdownMenu = button.nextElementSibling;
     const allDropdowns = document.querySelectorAll('.dropdown-menu');
     const allToggles = document.querySelectorAll('.dropdown-toggle');
-    
+
     // Close all other dropdowns
     allDropdowns.forEach(menu => {
         if (menu !== dropdownMenu) {
             menu.classList.remove('show');
         }
     });
-    
+
     allToggles.forEach(toggle => {
         if (toggle !== button) {
             toggle.classList.remove('active');
         }
     });
-    
+
     // Toggle current dropdown
     dropdownMenu.classList.toggle('show');
     button.classList.toggle('active');
@@ -76,11 +80,11 @@ function toggleDropdown(button) {
 function closeAllDropdowns() {
     const allDropdowns = document.querySelectorAll('.dropdown-menu');
     const allToggles = document.querySelectorAll('.dropdown-toggle');
-    
+
     allDropdowns.forEach(menu => {
         menu.classList.remove('show');
     });
-    
+
     allToggles.forEach(toggle => {
         toggle.classList.remove('active');
     });
@@ -93,7 +97,7 @@ function initScrollAnimations() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
@@ -107,10 +111,10 @@ function initScrollAnimations() {
     });
 
     // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const scrolled = window.pageYOffset;
         const parallaxElements = document.querySelectorAll('.parallax-element');
-        
+
         parallaxElements.forEach(el => {
             const speed = el.dataset.speed || 0.5;
             el.style.transform = `translateY(${scrolled * speed}px)`;
@@ -122,17 +126,17 @@ function initScrollAnimations() {
 function initProductInteractions() {
     // Quick add to cart
     document.querySelectorAll('.btn-quick-add').forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             e.preventDefault();
             const productCard = this.closest('.product-card');
             const productName = productCard.querySelector('h3').textContent;
-            
+
             // Add leaf animation
             this.classList.add('leaf-animation');
-            
+
             // Show success toast
             showSuccessToast(`${productName} added to cart!`);
-            
+
             // Remove animation class after animation completes
             setTimeout(() => {
                 this.classList.remove('leaf-animation');
@@ -142,11 +146,11 @@ function initProductInteractions() {
 
     // Product hover effects
     document.querySelectorAll('.product-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.classList.add('hover-lift');
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.classList.remove('hover-lift');
         });
     });
@@ -155,14 +159,14 @@ function initProductInteractions() {
 // Form Validation
 function initFormValidation() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const requiredFields = form.querySelectorAll('[required]');
             let isValid = true;
-            
+
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
                     isValid = false;
@@ -173,15 +177,15 @@ function initFormValidation() {
                     removeFieldError(field);
                 }
             });
-            
+
             if (isValid) {
                 submitForm(form);
             }
         });
-        
+
         // Remove error on input
         form.querySelectorAll('input, textarea, select').forEach(field => {
-            field.addEventListener('input', function() {
+            field.addEventListener('input', function () {
                 this.classList.remove('error');
                 removeFieldError(this);
             });
@@ -194,9 +198,9 @@ function showSuccessToast(message) {
     const toast = document.createElement('div');
     toast.className = 'success-toast';
     toast.textContent = message;
-    
+
     document.body.appendChild(toast);
-    
+
     // Auto remove after 3 seconds
     setTimeout(() => {
         toast.classList.add('hiding');
@@ -209,14 +213,14 @@ function showSuccessToast(message) {
 // Form Error Handling
 function showFieldError(field, message) {
     removeFieldError(field);
-    
+
     const errorDiv = document.createElement('div');
     errorDiv.className = 'field-error';
     errorDiv.textContent = message;
     errorDiv.style.color = 'var(--accent-color)';
     errorDiv.style.fontSize = '0.875rem';
     errorDiv.style.marginTop = '0.25rem';
-    
+
     field.parentNode.appendChild(errorDiv);
 }
 
@@ -231,20 +235,20 @@ function removeFieldError(field) {
 function submitForm(form) {
     const formData = new FormData(form);
     const submitButton = form.querySelector('button[type="submit"]');
-    
+
     // Show loading state
     submitButton.disabled = true;
     submitButton.textContent = 'Processing...';
     submitButton.classList.add('loading');
-    
+
     // Simulate API call
     setTimeout(() => {
         submitButton.disabled = false;
         submitButton.textContent = 'Success!';
         submitButton.classList.remove('loading');
-        
+
         showSuccessToast('Form submitted successfully!');
-        
+
         // Reset form
         setTimeout(() => {
             form.reset();
@@ -256,7 +260,7 @@ function submitForm(form) {
 // Lazy Loading for Images
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
-    
+
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -267,7 +271,7 @@ function initLazyLoading() {
             }
         });
     });
-    
+
     images.forEach(img => {
         imageObserver.observe(img);
     });
@@ -279,20 +283,20 @@ function initPerformanceOptimizations() {
     document.querySelectorAll('.hover-lift, .collection-card, .product-card').forEach(el => {
         el.classList.add('gpu-accelerated');
     });
-    
+
     // Debounce scroll events
     let scrollTimeout;
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (scrollTimeout) {
             window.cancelAnimationFrame(scrollTimeout);
         }
-        
-        scrollTimeout = window.requestAnimationFrame(function() {
+
+        scrollTimeout = window.requestAnimationFrame(function () {
             // Handle scroll-based animations
             handleScrollAnimations();
         });
     });
-    
+
     // Optimize images
     document.querySelectorAll('img').forEach(img => {
         img.loading = 'lazy';
@@ -303,7 +307,7 @@ function initPerformanceOptimizations() {
 function handleScrollAnimations() {
     const scrolled = window.pageYOffset;
     const windowHeight = window.innerHeight;
-    
+
     // Update navigation background
     const nav = document.querySelector('.main-nav');
     if (scrolled > 100) {
@@ -318,14 +322,14 @@ function animateImpactCounter(element, target, duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
             current = target;
             clearInterval(timer);
         }
-        
+
         element.textContent = Math.floor(current).toLocaleString();
     }, 16);
 }
@@ -333,7 +337,7 @@ function animateImpactCounter(element, target, duration = 2000) {
 // Initialize impact counters when visible
 function initImpactCounters() {
     const counters = document.querySelectorAll('.impact-counter');
-    
+
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
@@ -343,7 +347,7 @@ function initImpactCounters() {
             }
         });
     });
-    
+
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
@@ -353,19 +357,19 @@ function initImpactCounters() {
 function initSearch() {
     const searchInput = document.querySelector('.search-input');
     const searchResults = document.querySelector('.search-results');
-    
+
     if (searchInput) {
         let searchTimeout;
-        
-        searchInput.addEventListener('input', function() {
+
+        searchInput.addEventListener('input', function () {
             clearTimeout(searchTimeout);
             const query = this.value.trim();
-            
+
             if (query.length < 2) {
                 searchResults.style.display = 'none';
                 return;
             }
-            
+
             searchTimeout = setTimeout(() => {
                 performSearch(query);
             }, 300);
@@ -397,7 +401,7 @@ function debounce(func, wait) {
 
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
@@ -409,7 +413,7 @@ function throttle(func, limit) {
 }
 
 // Initialize additional features
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initSearch();
     initImpactCounters();
 });
