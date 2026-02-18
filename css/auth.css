@@ -13,11 +13,30 @@
 
 .auth-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     max-width: 500px;
     width: 100%;
     align-items: center;
+    gap: 2rem;
 }
+
+.auth-logo {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.auth-logo a {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.auth-logo .nav-brand h1::before {
+    left: -35px;
+}
+
+
 
 /* Auth Forms */
 .auth-form-container {

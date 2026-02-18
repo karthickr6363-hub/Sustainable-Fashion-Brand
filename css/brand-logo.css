@@ -20,9 +20,12 @@
 }
 
 @keyframes leafGentle {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(-50%) rotate(0deg);
     }
+
     50% {
         transform: translateY(-50%) rotate(5deg);
     }
@@ -37,38 +40,44 @@
 /* Footer logo enhancement */
 .footer-section h3 {
     color: var(--accent-color);
-    margin-bottom: 1rem;
-    position: relative;
-    padding-left: 30px;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .footer-section h3::before {
     content: '🌿';
-    position: absolute;
-    left: 0;
-    top: 0;
     font-size: 1.2rem;
 }
 
 /* Responsive logo adjustments */
 @media (max-width: 768px) {
+    .nav-brand {
+        padding-left: 25px;
+    }
+
     .nav-brand h1 {
         font-size: 1.5rem;
     }
-    
+
     .nav-brand h1::before {
-        left: -28px;
+        left: -25px;
         font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
+    .nav-brand {
+        padding-left: 20px;
+    }
+
     .nav-brand h1 {
         font-size: 1.3rem;
     }
-    
+
     .nav-brand h1::before {
-        left: -25px;
+        left: -20px;
         font-size: 1rem;
     }
 }

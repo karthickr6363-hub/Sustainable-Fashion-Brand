@@ -304,6 +304,7 @@
 
 .limited-info {
     padding: 2rem;
+    text-align: center;
 }
 
 .limited-info h3 {
@@ -329,6 +330,7 @@
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
+    justify-content: center;
 }
 
 .limited-features span {
@@ -345,6 +347,7 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    justify-content: center;
 }
 
 .limited-price .price {

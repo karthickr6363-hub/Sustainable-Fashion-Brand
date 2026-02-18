@@ -300,7 +300,9 @@
     padding: 2rem;
     text-align: center;
     border: 1px solid rgba(201, 162, 77, 0.2);
-    transition: transform 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .download-card:hover {
@@ -319,8 +321,7 @@
 
 .download-card p {
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
+    margin-top: auto;
 }
 
 /* Partner NGOs */
@@ -354,7 +355,9 @@
     padding: 2rem;
     text-align: center;
     border: 1px solid rgba(201, 162, 77, 0.2);
-    transition: transform 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .ngo-card:hover {
@@ -387,7 +390,7 @@
 .ngo-card p {
     color: var(--text-primary);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-top: auto;
 }
 
 .ngo-impact {
