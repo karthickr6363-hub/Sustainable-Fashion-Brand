@@ -59,6 +59,14 @@
     gap: 0.75rem;
 }
 
+.filter-toggle-btn {
+    display: none;
+}
+
+.mobile-only {
+    display: none;
+}
+
 .filter-label {
     display: flex;
     align-items: center;
@@ -152,6 +160,12 @@
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(244, 241, 236, 0.2);
+}
+
+.results-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .results-info span {
@@ -581,6 +595,25 @@
     }
 }
 
+/* Filter Overlay */
+.filter-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.filter-overlay.active {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .shop-layout {
@@ -589,8 +622,60 @@
     }
 
     .shop-filters {
-        position: static;
-        order: 2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 320px;
+        height: 100vh;
+        background-color: var(--forest-green);
+        z-index: 1002;
+        padding: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        overflow-y: auto;
+        border-radius: 0;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .shop-filters.active {
+        transform: translateX(0);
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+
+    .filter-toggle-btn {
+        display: flex;
+        width: auto;
+        justify-content: center;
+        gap: 0.5rem;
+        background-color: rgba(244, 241, 236, 0.05);
+        border: 1px solid rgba(201, 162, 77, 0.3);
+        color: var(--text-primary);
+        padding: 0.6rem 1.2rem;
+        margin-bottom: 0;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .filter-toggle-btn:hover {
+        background-color: rgba(244, 241, 236, 0.1);
+        border-color: var(--accent-color);
+    }
+
+    .filter-toggle-btn.active .toggle-icon {
+        transform: rotate(45deg);
+    }
+
+    .toggle-icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .filter-content {
+        display: block;
     }
 
     .shop-content {
@@ -599,6 +684,12 @@
 
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .product-impact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
     }
 }
 

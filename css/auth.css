@@ -326,7 +326,21 @@
 }
 
 .social-icon {
-    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-out;
+}
+
+.social-btn:hover .social-icon svg {
+    transform: scale(1.1);
 }
 
 /* Auth Switch */

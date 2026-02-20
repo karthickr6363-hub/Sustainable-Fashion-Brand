@@ -61,96 +61,102 @@
         <div class="container">
             <div class="shop-layout">
                 <!-- Filters Sidebar -->
-                <aside class="shop-filters">
-                    <div class="filter-section">
-                        <h3>Materials</h3>
-                        <div class="filter-options">
-                            <label class="filter-label">
-                                <input type="checkbox" name="material" value="organic-cotton">
-                                <span>Organic Cotton</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="material" value="linen">
-                                <span>Linen</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="material" value="hemp">
-                                <span>Hemp</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="material" value="recycled-silk">
-                                <span>Recycled Silk</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="material" value="bamboo">
-                                <span>Bamboo</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="filter-section">
-                        <h3>Size</h3>
-                        <div class="filter-options">
-                            <label class="filter-label">
-                                <input type="checkbox" name="size" value="xs">
-                                <span>XS</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="size" value="s">
-                                <span>S</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="size" value="m">
-                                <span>M</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="size" value="l">
-                                <span>L</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="size" value="xl">
-                                <span>XL</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="filter-section">
-                        <h3>Price Range</h3>
-                        <div class="price-range">
-                            <input type="range" min="0" max="500" value="250" class="price-slider">
-                            <div class="price-display">
-                                <span>$0</span>
-                                <span id="price-value">$250</span>
-                                <span>$500</span>
+                <aside class="shop-filters" id="shop-sidebar">
+                    <div id="filter-content" class="filter-content">
+                        <div class="filter-section">
+                            <h3>Materials</h3>
+                            <div class="filter-options">
+                                <label class="filter-label">
+                                    <input type="checkbox" name="material" value="organic-cotton">
+                                    <span>Organic Cotton</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="material" value="linen">
+                                    <span>Linen</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="material" value="hemp">
+                                    <span>Hemp</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="material" value="recycled-silk">
+                                    <span>Recycled Silk</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="material" value="bamboo">
+                                    <span>Bamboo</span>
+                                </label>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="filter-section">
-                        <h3>Impact Score</h3>
-                        <div class="impact-score-filter">
-                            <label class="filter-label">
-                                <input type="checkbox" name="impact" value="5">
-                                <span>⭐⭐⭐⭐⭐ Exceptional</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="impact" value="4">
-                                <span>⭐⭐⭐⭐ Excellent</span>
-                            </label>
-                            <label class="filter-label">
-                                <input type="checkbox" name="impact" value="3">
-                                <span>⭐⭐⭐ Good</span>
-                            </label>
+                        <div class="filter-section">
+                            <h3>Size</h3>
+                            <div class="filter-options">
+                                <label class="filter-label">
+                                    <input type="checkbox" name="size" value="xs">
+                                    <span>XS</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="size" value="s">
+                                    <span>S</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="size" value="m">
+                                    <span>M</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="size" value="l">
+                                    <span>L</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="size" value="xl">
+                                    <span>XL</span>
+                                </label>
+                            </div>
                         </div>
-                    </div>
 
-                    <button class="btn btn-secondary filter-reset">Reset Filters</button>
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <div class="price-range">
+                                <input type="range" min="0" max="500" value="250" class="price-slider">
+                                <div class="price-display">
+                                    <span>$0</span>
+                                    <span id="price-value">$250</span>
+                                    <span>$500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Impact Score</h3>
+                            <div class="impact-score-filter">
+                                <label class="filter-label">
+                                    <input type="checkbox" name="impact" value="5">
+                                    <span>⭐⭐⭐⭐⭐ Exceptional</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="impact" value="4">
+                                    <span>⭐⭐⭐⭐ Excellent</span>
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="impact" value="3">
+                                    <span>⭐⭐⭐ Good</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-secondary filter-reset">Reset Filters</button>
+                    </div>
                 </aside>
 
                 <!-- Product Grid -->
                 <section class="shop-content">
                     <div class="shop-header">
                         <div class="results-info">
+                            <button id="filter-toggle-btn" class="btn btn-secondary filter-toggle-btn mobile-only">
+                                <span>Filters</span>
+                                <span class="toggle-icon">+</span>
+                            </button>
                             <span>Showing 24 of 156 products</span>
                         </div>
                         <div class="sort-options">
@@ -181,7 +187,7 @@
                                 </div>
                             </div>
                             <div class="product-info">
-                                <h3>Organic Cotton Maxi Dress</h3>
+                                <h3>Organic Cotton Maxi </h3>
                                 <p class="product-material">100% Organic Cotton</p>
                                 <p class="product-price">$189</p>
                                 <div class="product-impact">
@@ -259,7 +265,7 @@
                                 </div>
                             </div>
                             <div class="product-info">
-                                <h3>Hemp Wide Leg Trousers</h3>
+                                <h3>Hemp Wide Leg </h3>
                                 <p class="product-material">Sustainable Hemp Blend</p>
                                 <p class="product-price">$156</p>
                                 <div class="product-impact">
@@ -311,8 +317,8 @@
                                 </div>
                             </div>
                             <div class="product-info">
-                                <h3>Handwoven Cotton Top</h3>
-                                <p class="product-material">Handwoven Organic Cotton</p>
+                                <h3>Handwoven Cotton</h3>
+                                <p class="product-material">Handwoven Organic</p>
                                 <p class="product-price">$134</p>
                                 <div class="product-impact">
                                     <span class="impact-score">⭐⭐⭐⭐</span>
@@ -338,6 +344,8 @@
             </div>
         </div>
     </main>
+
+    <div id="filter-overlay" class="filter-overlay"></div>
 
     <!-- Quick View Modal -->
     <div id="quick-view-modal" class="modal">

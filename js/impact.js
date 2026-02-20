@@ -1,6 +1,6 @@
 // Impact Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initLiveMetrics();
     initImpactCounters();
     initReportDownloads();
@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
 function initLiveMetrics() {
     // Simulate real-time updates
     setInterval(updateLiveMetrics, 5000);
-    
+
     // Add hover effects to metric cards
     const metricCards = document.querySelectorAll('.metric-card');
     metricCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px) scale(1.02)';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(-5px) scale(1)';
         });
     });
@@ -36,16 +36,16 @@ function updateLiveMetrics() {
         { id: 'organic-garments', increment: Math.floor(Math.random() * 20) + 10 },
         { id: 'items-recycled', increment: Math.floor(Math.random() * 10) + 5 }
     ];
-    
+
     metrics.forEach(metric => {
-        const element = document.querySelector(`[data-target="${metric.id}"]`);
+        const element = document.querySelector(`[data-metric-id="${metric.id}"]`);
         if (element) {
-            const currentValue = parseInt(element.textContent.replace(/,/g, ''));
+            const currentValue = parseFloat(element.textContent.replace(/,/g, ''));
             const newValue = currentValue + metric.increment;
-            
+
             // Animate the change
             animateValue(element, currentValue, newValue, 1000);
-            
+
             // Update daily change indicator
             const card = element.closest('.metric-card');
             const changeElement = card.querySelector('.metric-change');
@@ -62,32 +62,37 @@ function animateValue(element, start, end, duration) {
     const range = end - start;
     const increment = range / (duration / 16);
     let current = start;
-    
+
     const timer = setInterval(() => {
         current += increment;
-        if (current >= end) {
+        if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
             current = end;
             clearInterval(timer);
         }
-        
-        element.textContent = Math.floor(current).toLocaleString();
+
+        const decimals = (element.getAttribute('data-metric-id') === 'co2-reduced') ? 1 : 0;
+        if (decimals > 0) {
+            element.textContent = current.toFixed(decimals).toLocaleString();
+        } else {
+            element.textContent = Math.floor(current).toLocaleString();
+        }
     }, 16);
 }
 
 // Initialize Impact Counters
 function initImpactCounters() {
     const counters = document.querySelectorAll('.impact-counter');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                const target = parseInt(entry.target.dataset.target);
+                const target = parseFloat(entry.target.dataset.target);
                 animateCounter(entry.target, target);
                 entry.target.classList.add('animated');
             }
         });
     }, { threshold: 0.5 });
-    
+
     counters.forEach(counter => {
         observer.observe(counter);
     });
@@ -98,24 +103,29 @@ function animateCounter(element, target) {
     const duration = 2000;
     const increment = target / (duration / 16);
     let current = 0;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
             current = target;
             clearInterval(timer);
         }
-        
-        element.textContent = Math.floor(current).toLocaleString();
+
+        const decimals = (element.getAttribute('data-metric-id') === 'co2-reduced') ? 1 : 0;
+        if (decimals > 0) {
+            element.textContent = current.toFixed(decimals).toLocaleString();
+        } else {
+            element.textContent = Math.floor(current).toLocaleString();
+        }
     }, 16);
 }
 
 // Report Downloads
 function initReportDownloads() {
     const downloadButtons = document.querySelectorAll('.download-report');
-    
+
     downloadButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const reportType = this.dataset.report;
             downloadReport(reportType);
         });
@@ -129,7 +139,7 @@ function downloadReport(reportType) {
     const originalText = button.textContent;
     button.textContent = 'Downloading...';
     button.disabled = true;
-    
+
     // Simulate download
     setTimeout(() => {
         // Create download link
@@ -137,14 +147,14 @@ function downloadReport(reportType) {
         link.href = '#'; // In real app, this would be actual PDF URL
         link.download = `${reportType}.pdf`;
         link.click();
-        
+
         // Reset button
         button.textContent = 'Downloaded ✓';
         button.style.backgroundColor = '#27ae60';
-        
+
         // Show success message
         window.EcoLux.showSuccessToast('Report downloaded successfully!');
-        
+
         // Reset button after 3 seconds
         setTimeout(() => {
             button.textContent = originalText;
@@ -157,23 +167,23 @@ function downloadReport(reportType) {
 // NGO Partnerships
 function initNGOPartnerships() {
     const learnMoreButtons = document.querySelectorAll('.learn-more');
-    
+
     learnMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const ngoCard = this.closest('.ngo-card');
             const ngoName = ngoCard.querySelector('h3').textContent;
             showNGODetails(ngoName);
         });
     });
-    
+
     // Add hover effects to NGO cards
     const ngoCards = document.querySelectorAll('.ngo-card');
     ngoCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px) scale(1.02)';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(-5px) scale(1)';
         });
     });
@@ -223,14 +233,14 @@ function showNGODetails(ngoName) {
             website: 'https://www.water.org'
         }
     };
-    
+
     const details = ngoDetails[ngoName];
     if (!details) return;
-    
+
     // Create modal
     const modal = createNGOModal(ngoName, details);
     document.body.appendChild(modal);
-    
+
     // Show modal
     setTimeout(() => {
         modal.style.display = 'block';
@@ -251,7 +261,7 @@ function createNGOModal(ngoName, details) {
         display: none;
         z-index: 2000;
     `;
-    
+
     modal.innerHTML = `
         <div class="ngo-modal-content" style="
             position: absolute;
@@ -331,7 +341,7 @@ function createNGOModal(ngoName, details) {
             </div>
         </div>
     `;
-    
+
     // Add event listeners
     const closeButtons = modal.querySelectorAll('.modal-close');
     closeButtons.forEach(btn => {
@@ -339,13 +349,13 @@ function createNGOModal(ngoName, details) {
             modal.remove();
         });
     });
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.remove();
         }
     });
-    
+
     return modal;
 }
 
@@ -354,15 +364,15 @@ function initPersonalImpactCalculator() {
     const calculateBtn = document.getElementById('calculate-personal-impact');
     const shareBtn = document.querySelector('.share-impact');
     const historyBtn = document.querySelector('.view-history');
-    
+
     if (calculateBtn) {
         calculateBtn.addEventListener('click', calculatePersonalImpact);
     }
-    
+
     if (shareBtn) {
         shareBtn.addEventListener('click', sharePersonalImpact);
     }
-    
+
     if (historyBtn) {
         historyBtn.addEventListener('click', viewPurchaseHistory);
     }
@@ -371,30 +381,30 @@ function initPersonalImpactCalculator() {
 // Calculate Personal Impact
 function calculatePersonalImpact() {
     const email = document.getElementById('customer-email').value;
-    
+
     if (!email) {
         window.EcoLux.showSuccessToast('Please enter your email address');
         return;
     }
-    
+
     // Simulate fetching customer data
     const customerData = generateMockCustomerData(email);
-    
+
     // Calculate impact based on mock data
     const waterSaved = customerData.totalSpent * 15; // 15 liters per $1 spent
     const co2Reduced = customerData.totalSpent * 0.05; // 0.05kg CO2 per $1 spent
     const treesEquivalent = Math.floor(co2Reduced / 21); // 21kg CO2 per tree
-    
+
     // Update display with animation
     updatePersonalMetrics(waterSaved, co2Reduced, treesEquivalent);
-    
+
     // Show results
     const resultsDiv = document.getElementById('personal-results');
     resultsDiv.style.display = 'block';
-    
+
     // Scroll to results
     resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    
+
     // Show success message
     window.EcoLux.showSuccessToast('Your impact calculated successfully!');
 }
@@ -405,7 +415,7 @@ function generateMockCustomerData(email) {
     const emailHash = email.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
     const totalSpent = (emailHash % 1000) + 100; // $100-$1100
     const orderCount = Math.floor(totalSpent / 150) + 1; // Average order $150
-    
+
     return {
         email: email,
         totalSpent: totalSpent,
@@ -426,13 +436,13 @@ function sharePersonalImpact() {
     const waterSaved = document.getElementById('personal-water').textContent;
     const co2Reduced = document.getElementById('personal-co2').textContent;
     const treesEquivalent = document.getElementById('personal-trees').textContent;
-    
+
     const shareText = `My sustainable fashion choices with EcoLux have saved ${waterSaved} liters of water, reduced ${co2Reduced}kg of CO₂, and are equivalent to planting ${treesEquivalent} trees! 🌍♻️ #SustainableFashion #EcoLux`;
-    
+
     // Create share modal
     const shareModal = createShareModal(shareText);
     document.body.appendChild(shareModal);
-    
+
     setTimeout(() => {
         shareModal.style.display = 'block';
     }, 100);
@@ -441,16 +451,16 @@ function sharePersonalImpact() {
 // View Purchase History
 function viewPurchaseHistory() {
     const email = document.getElementById('customer-email').value;
-    
+
     if (!email) {
         window.EcoLux.showSuccessToast('Please enter your email first');
         return;
     }
-    
+
     // Create purchase history modal
     const historyModal = createPurchaseHistoryModal(email);
     document.body.appendChild(historyModal);
-    
+
     setTimeout(() => {
         historyModal.style.display = 'block';
     }, 100);
@@ -460,7 +470,7 @@ function viewPurchaseHistory() {
 function createPurchaseHistoryModal(email) {
     const customerData = generateMockCustomerData(email);
     const orders = generateMockOrders(customerData.orderCount);
-    
+
     const modal = document.createElement('div');
     modal.className = 'history-modal';
     modal.style.cssText = `
@@ -473,7 +483,7 @@ function createPurchaseHistoryModal(email) {
         display: none;
         z-index: 2000;
     `;
-    
+
     modal.innerHTML = `
         <div class="history-modal-content" style="
             position: absolute;
@@ -562,7 +572,7 @@ function createPurchaseHistoryModal(email) {
             </div>
         </div>
     `;
-    
+
     // Add event listeners
     const closeButtons = modal.querySelectorAll('.modal-close');
     closeButtons.forEach(btn => {
@@ -570,13 +580,13 @@ function createPurchaseHistoryModal(email) {
             modal.remove();
         });
     });
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.remove();
         }
     });
-    
+
     return modal;
 }
 
@@ -590,17 +600,17 @@ function generateMockOrders(orderCount) {
         'Bamboo Lounge Set',
         'Handwoven Cotton Top'
     ];
-    
+
     const orders = [];
     for (let i = 0; i < Math.min(orderCount, 5); i++) {
         const orderDate = new Date(Date.now() - (i * 30) * 24 * 60 * 60 * 1000);
         const itemCount = Math.floor(Math.random() * 3) + 1;
         const orderItems = [];
-        
+
         for (let j = 0; j < itemCount; j++) {
             orderItems.push(items[Math.floor(Math.random() * items.length)]);
         }
-        
+
         orders.push({
             id: 1000 + i,
             date: orderDate.toLocaleDateString(),
@@ -608,7 +618,7 @@ function generateMockOrders(orderCount) {
             total: (itemCount * (Math.floor(Math.random() * 100) + 100)).toFixed(2)
         });
     }
-    
+
     return orders;
 }
 
@@ -619,7 +629,7 @@ function initAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -627,7 +637,7 @@ function initAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements
     document.querySelectorAll('.metric-card, .highlight-card, .download-card, .ngo-card').forEach(element => {
         element.classList.add('scroll-reveal');

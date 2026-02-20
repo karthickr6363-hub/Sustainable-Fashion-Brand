@@ -1,6 +1,6 @@
 // About Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initStoryAnimations();
     initTeamInteractions();
     initImpactCounters();
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initStoryAnimations() {
     // Animate story metrics on scroll
     const metrics = document.querySelectorAll('.metric');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
@@ -21,19 +21,19 @@ function initStoryAnimations() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     metrics.forEach(metric => {
         observer.observe(metric);
     });
-    
+
     // Add hover effects to story elements
     const storyImage = document.querySelector('.story-image');
     if (storyImage) {
-        storyImage.addEventListener('mouseenter', function() {
+        storyImage.addEventListener('mouseenter', function () {
             this.style.transform = 'scale(1.02)';
         });
-        
-        storyImage.addEventListener('mouseleave', function() {
+
+        storyImage.addEventListener('mouseleave', function () {
             this.style.transform = 'scale(1)';
         });
     }
@@ -43,50 +43,44 @@ function initStoryAnimations() {
 function animateMetric(metricElement) {
     const numberElement = metricElement.querySelector('.metric-number');
     const targetText = numberElement.textContent;
-    const target = parseInt(targetText.replace(/\D/g, '')) || 0;
-    
+    const target = parseFloat(targetText.replace(/[^0-9.]/g, '')) || 0;
+
     let current = 0;
     const increment = target / 50;
     const duration = 2000;
     const stepTime = duration / 50;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
             current = target;
             clearInterval(timer);
         }
-        
+
         // Format the number based on original format
-        if (targetText.includes('M')) {
-            numberElement.textContent = (current / 1000000).toFixed(1) + 'M+';
-        } else if (targetText.includes('K')) {
-            numberElement.textContent = (current / 1000).toFixed(0) + 'K+';
-        } else if (targetText.includes('+')) {
-            numberElement.textContent = Math.floor(current) + '+';
-        } else {
-            numberElement.textContent = Math.floor(current);
-        }
+        const suffix = targetText.replace(/[0-9.]/g, '');
+        const decimals = targetText.includes('.') ? 1 : 0;
+        numberElement.textContent = current.toFixed(decimals) + suffix;
     }, stepTime);
 }
 
 // Team Interactions
 function initTeamInteractions() {
     const teamMembers = document.querySelectorAll('.team-member');
-    
+
     teamMembers.forEach(member => {
-        member.addEventListener('click', function() {
+        member.addEventListener('click', function () {
             const memberData = extractMemberData(this);
             showMemberModal(memberData);
         });
-        
+
         // Add enhanced hover effects
-        member.addEventListener('mouseenter', function() {
+        member.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px) scale(1.02)';
             this.style.boxShadow = '0 20px 40px rgba(201, 162, 77, 0.3)';
         });
-        
-        member.addEventListener('mouseleave', function() {
+
+        member.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(-5px) scale(1)';
             this.style.boxShadow = '0 15px 35px rgba(201, 162, 77, 0.2)';
         });
@@ -103,7 +97,7 @@ function extractMemberData(memberElement) {
         platform: link.textContent,
         url: link.href
     }));
-    
+
     return {
         name,
         title,
@@ -142,7 +136,7 @@ function generateMemberAchievements(name) {
             'Fair Trade Advocate'
         ]
     };
-    
+
     return achievements[name] || [
         'Industry Recognition',
         'Sustainability Champion',
@@ -158,7 +152,7 @@ function showMemberModal(memberData) {
     if (existingModal) {
         existingModal.remove();
     }
-    
+
     // Create modal
     const modal = document.createElement('div');
     modal.className = 'member-modal';
@@ -172,7 +166,7 @@ function showMemberModal(memberData) {
         display: none;
         z-index: 2000;
     `;
-    
+
     modal.innerHTML = `
         <div class="member-modal-content" style="
             position: absolute;
@@ -260,9 +254,9 @@ function showMemberModal(memberData) {
             </div>
         </div>
     `;
-    
+
     document.body.appendChild(modal);
-    
+
     // Add event listeners
     const closeButtons = modal.querySelectorAll('.modal-close');
     closeButtons.forEach(btn => {
@@ -270,13 +264,13 @@ function showMemberModal(memberData) {
             modal.remove();
         });
     });
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.remove();
         }
     });
-    
+
     // Show modal with animation
     setTimeout(() => {
         modal.style.display = 'block';
@@ -291,7 +285,7 @@ function showMemberModal(memberData) {
 // Impact Counters
 function initImpactCounters() {
     const statCards = document.querySelectorAll('.stat-card');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
@@ -300,7 +294,7 @@ function initImpactCounters() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     statCards.forEach(card => {
         observer.observe(card);
     });
@@ -310,37 +304,36 @@ function initImpactCounters() {
 function animateStatCard(statCard) {
     const numberElement = statCard.querySelector('.stat-number');
     const targetText = numberElement.textContent;
-    
+
     // Add glow effect during animation
     statCard.style.boxShadow = '0 0 30px rgba(201, 162, 77, 0.5)';
-    
+
     let current = 0;
-    const target = parseInt(targetText.replace(/\D/g, '')) || 0;
+    const target = parseFloat(targetText.replace(/[^0-9.]/g, '')) || 0;
     const increment = target / 60;
     const duration = 2000;
     const stepTime = duration / 60;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
             current = target;
             clearInterval(timer);
-            
+
             // Remove glow effect
             setTimeout(() => {
                 statCard.style.boxShadow = '';
             }, 500);
         }
-        
+
         // Format based on original format
-        if (targetText.includes('M')) {
-            numberElement.textContent = (current / 1000000).toFixed(0) + 'M';
-        } else if (targetText.includes('K')) {
-            numberElement.textContent = (current / 1000).toFixed(0) + 'K';
-        } else if (targetText.includes('%')) {
-            numberElement.textContent = Math.floor(current) + '%';
+        const suffix = targetText.replace(/[0-9,.]/g, '');
+        const decimals = targetText.includes('.') ? 1 : 0;
+
+        if (suffix.includes('%') || suffix.includes('+') || suffix.includes('M') || suffix.includes('K')) {
+            numberElement.textContent = current.toFixed(decimals) + suffix;
         } else {
-            numberElement.textContent = Math.floor(current).toLocaleString();
+            numberElement.textContent = Math.floor(current).toLocaleString() + suffix;
         }
     }, stepTime);
 }
@@ -348,14 +341,14 @@ function animateStatCard(statCard) {
 // Join Us Actions
 function initJoinUsActions() {
     const joinOptions = document.querySelectorAll('.join-option');
-    
+
     joinOptions.forEach(option => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function () {
             const button = this.querySelector('a');
             if (button) {
                 // Create ripple effect
                 createRippleEffect(this, event);
-                
+
                 // Handle button click
                 setTimeout(() => {
                     if (button.href.includes('shop.html')) {
@@ -378,7 +371,7 @@ function createRippleEffect(element, event) {
     const size = Math.max(rect.width, rect.height);
     const x = event.clientX - rect.left - size / 2;
     const y = event.clientY - rect.top - size / 2;
-    
+
     ripple.style.cssText = `
         position: absolute;
         width: ${size}px;
@@ -391,11 +384,11 @@ function createRippleEffect(element, event) {
         transform: scale(0);
         animation: ripple 0.6s ease-out;
     `;
-    
+
     element.style.position = 'relative';
     element.style.overflow = 'hidden';
     element.appendChild(ripple);
-    
+
     setTimeout(() => {
         ripple.remove();
     }, 600);
@@ -417,7 +410,7 @@ function showContactModal() {
         justify-content: center;
         z-index: 2000;
     `;
-    
+
     modal.innerHTML = `
         <div class="contact-modal-content" style="
             background: var(--primary-bg);
@@ -485,40 +478,40 @@ function showContactModal() {
             ">Close</button>
         </div>
     `;
-    
+
     document.body.appendChild(modal);
-    
+
     // Add event listeners
     const form = modal.querySelector('form');
     const closeBtn = modal.querySelector('.modal-close');
-    
-    form.addEventListener('submit', function(e) {
+
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Show loading state
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
-        
+
         // Simulate form submission
         setTimeout(() => {
             submitBtn.textContent = 'Sent ✓';
             submitBtn.style.backgroundColor = '#27ae60';
-            
+
             window.EcoLux.showSuccessToast('Partnership inquiry sent successfully!');
-            
+
             // Reset and close
             setTimeout(() => {
                 modal.remove();
             }, 2000);
         }, 1500);
     });
-    
+
     closeBtn.addEventListener('click', () => {
         modal.remove();
     });
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.remove();
@@ -539,13 +532,13 @@ function initScrollAnimations() {
         }
     `;
     document.head.appendChild(style);
-    
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -553,7 +546,7 @@ function initScrollAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements
     document.querySelectorAll('.pillar, .value-card, .highlight').forEach(element => {
         element.classList.add('scroll-reveal');

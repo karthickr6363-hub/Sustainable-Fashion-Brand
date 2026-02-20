@@ -1,6 +1,6 @@
 // Authentication Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initAuthForms();
     initPasswordToggles();
     initFormValidation();
@@ -16,35 +16,35 @@ function initAuthForms() {
     const registerForm = document.getElementById('registerForm');
     const switchToRegister = document.querySelector('.switch-to-register');
     const switchToLogin = document.querySelector('.switch-to-login');
-    
+
     // Switch between forms
     if (switchToRegister) {
-        switchToRegister.addEventListener('click', function(e) {
+        switchToRegister.addEventListener('click', function (e) {
             e.preventDefault();
             showRegisterForm();
         });
     }
-    
+
     if (switchToLogin) {
-        switchToLogin.addEventListener('click', function(e) {
+        switchToLogin.addEventListener('click', function (e) {
             e.preventDefault();
             showLoginForm();
         });
     }
-    
+
     // Handle form submissions
     const loginFormElement = document.getElementById('loginFormElement');
     const registerFormElement = document.getElementById('registerFormElement');
-    
+
     if (loginFormElement) {
-        loginFormElement.addEventListener('submit', function(e) {
+        loginFormElement.addEventListener('submit', function (e) {
             e.preventDefault();
             handleLogin(this);
         });
     }
-    
+
     if (registerFormElement) {
-        registerFormElement.addEventListener('submit', function(e) {
+        registerFormElement.addEventListener('submit', function (e) {
             e.preventDefault();
             handleRegister(this);
         });
@@ -55,14 +55,14 @@ function initAuthForms() {
 function showRegisterForm() {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
-    
+
     loginForm.style.display = 'none';
     registerForm.style.display = 'block';
-    
+
     // Animate form appearance
     registerForm.style.opacity = '0';
     registerForm.style.transform = 'translateY(20px)';
-    
+
     setTimeout(() => {
         registerForm.style.opacity = '1';
         registerForm.style.transform = 'translateY(0)';
@@ -74,14 +74,14 @@ function showRegisterForm() {
 function showLoginForm() {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
-    
+
     registerForm.style.display = 'none';
     loginForm.style.display = 'block';
-    
+
     // Animate form appearance
     loginForm.style.opacity = '0';
     loginForm.style.transform = 'translateY(20px)';
-    
+
     setTimeout(() => {
         loginForm.style.opacity = '1';
         loginForm.style.transform = 'translateY(0)';
@@ -92,13 +92,13 @@ function showLoginForm() {
 // Password Toggles
 function initPasswordToggles() {
     const toggleButtons = document.querySelectorAll('.password-toggle');
-    
+
     toggleButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const targetId = this.dataset.target;
             const input = document.getElementById(targetId);
             const eyeIcon = this.querySelector('.eye-icon');
-            
+
             if (input.type === 'password') {
                 input.type = 'text';
                 eyeIcon.textContent = '👁️‍🗨️';
@@ -113,14 +113,14 @@ function initPasswordToggles() {
 // Form Validation
 function initFormValidation() {
     const inputs = document.querySelectorAll('.auth-form input[required]');
-    
+
     inputs.forEach(input => {
         // Real-time validation
-        input.addEventListener('blur', function() {
+        input.addEventListener('blur', function () {
             validateField(this);
         });
-        
-        input.addEventListener('input', function() {
+
+        input.addEventListener('input', function () {
             if (this.classList.contains('error')) {
                 validateField(this);
             }
@@ -132,13 +132,13 @@ function initFormValidation() {
 function validateField(field) {
     const errorElement = field.parentElement.querySelector('.form-error');
     let isValid = true;
-    
+
     // Remove previous error state
     field.classList.remove('error');
     if (errorElement) {
         errorElement.classList.remove('show');
     }
-    
+
     // Email validation
     if (field.type === 'email') {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -146,13 +146,13 @@ function validateField(field) {
             isValid = false;
         }
     }
-    
+
     // Password validation
     if (field.type === 'password') {
         if (field.value.length < 8) {
             isValid = false;
         }
-        
+
         // Confirm password validation
         if (field.id === 'register-confirm') {
             const passwordField = document.getElementById('register-password');
@@ -161,12 +161,12 @@ function validateField(field) {
             }
         }
     }
-    
+
     // Required field validation
     if (field.hasAttribute('required') && !field.value.trim()) {
         isValid = false;
     }
-    
+
     // Show error if invalid
     if (!isValid && field.value) {
         field.classList.add('error');
@@ -174,7 +174,7 @@ function validateField(field) {
             errorElement.classList.add('show');
         }
     }
-    
+
     return isValid;
 }
 
@@ -183,27 +183,27 @@ function handleLogin(form) {
     const email = form.querySelector('#login-email').value;
     const password = form.querySelector('#login-password').value;
     const rememberMe = form.querySelector('#remember-me').checked;
-    
+
     // Validate form
     const emailField = form.querySelector('#login-email');
     const passwordField = form.querySelector('#login-password');
-    
+
     let isValid = true;
-    
+
     if (!validateField(emailField)) isValid = false;
     if (!validateField(passwordField)) isValid = false;
-    
+
     if (!isValid) {
         window.EcoLux.showSuccessToast('Please fix the errors in the form');
         return;
     }
-    
+
     // Show loading state
     const submitBtn = form.querySelector('.auth-submit');
     const originalText = submitBtn.textContent;
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
-    
+
     // Simulate login process
     setTimeout(() => {
         // Store login state
@@ -213,25 +213,25 @@ function handleLogin(form) {
             loginTime: new Date().toISOString(),
             rememberMe: rememberMe
         };
-        
+
         if (rememberMe) {
             localStorage.setItem('ecolux_user', JSON.stringify(userData));
         } else {
             sessionStorage.setItem('ecolux_user', JSON.stringify(userData));
         }
-        
+
         // Show success modal
         showSuccessModal('Welcome Back!', 'You\'re now signed in to your EcoLux account.', 'Go to Dashboard');
-        
+
         // Reset form
         submitBtn.classList.remove('loading');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         form.reset();
-        
+
         // Create leaf animation
         createLeafAnimation(window.innerWidth / 2, window.innerHeight / 2);
-        
+
     }, 2000);
 }
 
@@ -244,7 +244,7 @@ function handleRegister(form) {
     const confirm = form.querySelector('#register-confirm').value;
     const agreeTerms = form.querySelector('#agree-terms').checked;
     const newsletter = form.querySelector('#newsletter-subscribe').checked;
-    
+
     // Validate form
     const fields = [
         form.querySelector('#register-firstname'),
@@ -253,30 +253,30 @@ function handleRegister(form) {
         form.querySelector('#register-password'),
         form.querySelector('#register-confirm')
     ];
-    
+
     let isValid = true;
     fields.forEach(field => {
         if (!validateField(field)) {
             isValid = false;
         }
     });
-    
+
     if (!agreeTerms) {
         window.EcoLux.showSuccessToast('Please agree to the Terms of Service and Privacy Policy');
         return;
     }
-    
+
     if (!isValid) {
         window.EcoLux.showSuccessToast('Please fix the errors in the form');
         return;
     }
-    
+
     // Show loading state
     const submitBtn = form.querySelector('.auth-submit');
     const originalText = submitBtn.textContent;
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
-    
+
     // Simulate registration process
     setTimeout(() => {
         // Store user data
@@ -288,43 +288,43 @@ function handleRegister(form) {
             registrationTime: new Date().toISOString(),
             newsletter: newsletter
         };
-        
+
         localStorage.setItem('ecolux_user', JSON.stringify(userData));
-        
+
         // Show success modal
         showSuccessModal('Account Created!', `Welcome to EcoLux, ${firstname}! Your account has been created successfully.`, 'Start Shopping');
-        
+
         // Reset form
         submitBtn.classList.remove('loading');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         form.reset();
-        
+
         // Reset password strength indicator
         const strengthFill = document.querySelector('.strength-fill');
         if (strengthFill) {
             strengthFill.className = 'strength-fill';
         }
-        
+
         // Create leaf animation
         createLeafAnimation(window.innerWidth / 2, window.innerHeight / 2);
-        
+
     }, 2000);
 }
 
 // Social Login
 function initSocialLogin() {
     const socialButtons = document.querySelectorAll('.social-btn');
-    
+
     socialButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const provider = this.classList.contains('google') ? 'Google' : 'Facebook';
-            
+
             // Show loading state
-            const originalText = this.textContent;
-            this.textContent = 'Connecting...';
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<span class="social-icon">⏳</span> Connecting...';
             this.disabled = true;
-            
+
             // Simulate social login
             setTimeout(() => {
                 const userData = {
@@ -333,18 +333,18 @@ function initSocialLogin() {
                     provider: provider,
                     loginTime: new Date().toISOString()
                 };
-                
+
                 localStorage.setItem('ecolux_user', JSON.stringify(userData));
-                
+
                 showSuccessModal(`Welcome!`, `You've successfully signed in with ${provider}.`, 'Continue Shopping');
-                
+
                 // Reset button
-                this.textContent = originalText;
+                this.innerHTML = originalHTML;
                 this.disabled = false;
-                
+
                 // Create leaf animation
                 createLeafAnimation(window.innerWidth / 2, window.innerHeight / 2);
-                
+
             }, 1500);
         });
     });
@@ -355,15 +355,15 @@ function initPasswordStrength() {
     const passwordInput = document.getElementById('register-password');
     const strengthFill = document.querySelector('.strength-fill');
     const strengthText = document.querySelector('.strength-text');
-    
+
     if (passwordInput && strengthFill) {
-        passwordInput.addEventListener('input', function() {
+        passwordInput.addEventListener('input', function () {
             const password = this.value;
             const strength = calculatePasswordStrength(password);
-            
+
             strengthFill.className = 'strength-fill ' + strength.class;
             strengthFill.style.width = strength.width;
-            
+
             if (strengthText) {
                 strengthText.textContent = strength.text;
             }
@@ -374,17 +374,17 @@ function initPasswordStrength() {
 // Calculate Password Strength
 function calculatePasswordStrength(password) {
     let score = 0;
-    
+
     // Length
     if (password.length >= 8) score += 1;
     if (password.length >= 12) score += 1;
-    
+
     // Complexity
     if (/[a-z]/.test(password)) score += 1;
     if (/[A-Z]/.test(password)) score += 1;
     if (/[0-9]/.test(password)) score += 1;
     if (/[^a-zA-Z0-9]/.test(password)) score += 1;
-    
+
     if (score <= 2) {
         return { class: 'weak', width: '33%', text: 'Weak password' };
     } else if (score <= 4) {
@@ -398,12 +398,12 @@ function calculatePasswordStrength(password) {
 function initSuccessModal() {
     const modal = document.getElementById('successModal');
     const successButton = document.getElementById('successButton');
-    
+
     if (successButton) {
-        successButton.addEventListener('click', function() {
+        successButton.addEventListener('click', function () {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
-            
+
             // Redirect based on context
             if (this.textContent.includes('Dashboard')) {
                 window.location.href = 'dashboard.html';
@@ -412,9 +412,9 @@ function initSuccessModal() {
             }
         });
     }
-    
+
     // Close modal on outside click
-    modal.addEventListener('click', function(e) {
+    modal.addEventListener('click', function (e) {
         if (e.target === modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
@@ -428,11 +428,11 @@ function showSuccessModal(title, message, buttonText) {
     const titleElement = document.getElementById('successTitle');
     const messageElement = document.getElementById('successMessage');
     const buttonElement = document.getElementById('successButton');
-    
+
     titleElement.textContent = title;
     messageElement.textContent = message;
     buttonElement.textContent = buttonText;
-    
+
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
@@ -451,9 +451,9 @@ function createLeafAnimation(x, y) {
         pointer-events: none;
         animation: leafFloat 1s ease-out forwards;
     `;
-    
+
     document.body.appendChild(leaf);
-    
+
     setTimeout(() => {
         document.body.removeChild(leaf);
     }, 1000);
@@ -479,13 +479,13 @@ function initAnimations() {
         `;
         document.head.appendChild(style);
     }
-    
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -493,7 +493,7 @@ function initAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements
     document.querySelectorAll('.feature-item, .testimonial').forEach(element => {
         element.classList.add('scroll-reveal');
@@ -504,11 +504,11 @@ function initAnimations() {
 // Check if user is already logged in
 function checkLoginStatus() {
     const userData = localStorage.getItem('ecolux_user') || sessionStorage.getItem('ecolux_user');
-    
+
     if (userData) {
         const user = JSON.parse(userData);
         console.log('User already logged in:', user.name);
-        
+
         // You could redirect to dashboard or show logged-in state
         // For demo purposes, we'll allow re-login
     }
