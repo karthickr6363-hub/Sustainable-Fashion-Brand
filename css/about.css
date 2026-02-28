@@ -195,8 +195,28 @@
 }
 
 .pillar-icon {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(15, 42, 29, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pillar-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pillar:hover .pillar-icon img {
+    transform: scale(1.1);
 }
 
 .pillar h3 {
@@ -259,8 +279,28 @@
 }
 
 .value-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(15, 42, 29, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.value-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.value-card:hover .value-icon img {
+    transform: scale(1.1);
 }
 
 .value-card h3 {
@@ -436,8 +476,22 @@
 }
 
 .highlight-icon {
-    font-size: 2rem;
-    min-width: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(15, 42, 29, 0.4);
+    min-width: 60px;
+}
+
+.highlight-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .highlight h4 {
@@ -495,8 +549,28 @@
 }
 
 .option-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(15, 42, 29, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.option-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.join-option:hover .option-icon img {
+    transform: scale(1.1);
 }
 
 .join-option h3 {
@@ -533,7 +607,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .about-hero h1 {
         font-size: 2.5rem;
     }

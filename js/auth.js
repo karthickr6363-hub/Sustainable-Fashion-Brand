@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initFormValidation();
     initSocialLogin();
     initPasswordStrength();
-    initSuccessModal();
     initAnimations();
 });
 
@@ -220,8 +219,8 @@ function handleLogin(form) {
             sessionStorage.setItem('ecolux_user', JSON.stringify(userData));
         }
 
-        // Show success modal
-        showSuccessModal('Welcome Back!', 'You\'re now signed in to your EcoLux account.', 'Go to Dashboard');
+        // Redirect immediately
+        window.location.href = 'shop.html';
 
         // Reset form
         submitBtn.classList.remove('loading');
@@ -291,8 +290,8 @@ function handleRegister(form) {
 
         localStorage.setItem('ecolux_user', JSON.stringify(userData));
 
-        // Show success modal
-        showSuccessModal('Account Created!', `Welcome to EcoLux, ${firstname}! Your account has been created successfully.`, 'Start Shopping');
+        // Redirect immediately
+        window.location.href = 'shop.html';
 
         // Reset form
         submitBtn.classList.remove('loading');
@@ -336,7 +335,8 @@ function initSocialLogin() {
 
                 localStorage.setItem('ecolux_user', JSON.stringify(userData));
 
-                showSuccessModal(`Welcome!`, `You've successfully signed in with ${provider}.`, 'Continue Shopping');
+                // Redirect immediately
+                window.location.href = 'shop.html';
 
                 // Reset button
                 this.innerHTML = originalHTML;
@@ -394,48 +394,7 @@ function calculatePasswordStrength(password) {
     }
 }
 
-// Success Modal
-function initSuccessModal() {
-    const modal = document.getElementById('successModal');
-    const successButton = document.getElementById('successButton');
 
-    if (successButton) {
-        successButton.addEventListener('click', function () {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-
-            // Redirect based on context
-            if (this.textContent.includes('Dashboard')) {
-                window.location.href = 'dashboard.html';
-            } else {
-                window.location.href = 'shop.html';
-            }
-        });
-    }
-
-    // Close modal on outside click
-    modal.addEventListener('click', function (e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-}
-
-// Show Success Modal
-function showSuccessModal(title, message, buttonText) {
-    const modal = document.getElementById('successModal');
-    const titleElement = document.getElementById('successTitle');
-    const messageElement = document.getElementById('successMessage');
-    const buttonElement = document.getElementById('successButton');
-
-    titleElement.textContent = title;
-    messageElement.textContent = message;
-    buttonElement.textContent = buttonText;
-
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
 
 // Create Leaf Animation
 function createLeafAnimation(x, y) {
@@ -523,6 +482,5 @@ window.EcoLuxAuth = {
     showLoginForm,
     validateField,
     handleLogin,
-    handleRegister,
-    showSuccessModal
+    handleRegister
 };
