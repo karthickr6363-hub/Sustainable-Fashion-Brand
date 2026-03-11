@@ -371,6 +371,7 @@
     padding: 2rem;
     border: 1px solid rgba(201, 162, 77, 0.2);
     transition: transform 0.3s ease-out;
+    text-align: center;
 }
 
 .certification-card:hover {
@@ -378,9 +379,9 @@
 }
 
 .cert-logo {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1.5rem;
+    width: 200px;
+    height: 160px;
+    margin: 0 auto 1.5rem auto;
     background-color: rgba(201, 162, 77, 0.1);
     border-radius: var(--radius-md);
     display: flex;
@@ -410,6 +411,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center;
 }
 
 .cert-details span {
